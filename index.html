@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cornstone - Dashboard</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --border: #e5e7eb;
+      --shadow: 0 10px 25px rgba(0,0,0,0.06);
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .topbar {
+      background: #0f172a;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 28px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .brand-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #38bdf8, #2563eb);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn {
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .btn:hover { background: var(--primary-dark); }
+
+    .container {
+      max-width: 1200px;
+      margin: 28px auto 60px;
+      padding: 0 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .card h3 { margin: 0 0 8px; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .hero {
+      grid-column: span 12;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .hero .text {
+      max-width: 600px;
+    }
+
+    .hero .text h2 {
+      margin: 0 0 10px;
+      font-size: 28px;
+    }
+
+    .hero .text span {
+      color: var(--primary);
+    }
+
+    .hero .image {
+      flex: 0 0 220px;
+      height: 140px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #fde68a, #f97316);
+      display: grid;
+      place-items: center;
+      color: #7c2d12;
+      font-weight: 700;
+    }
+
+    .links { grid-column: span 4; }
+    .progress { grid-column: span 4; }
+    .section { grid-column: span 4; }
+    .faq { grid-column: span 12; }
+
+    .list {
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+    }
+
+    .list a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .progress-bar {
+      margin-top: 12px;
+      width: 100%;
+      height: 12px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-bar span {
+      display: block;
+      height: 100%;
+      width: 68%;
+      background: linear-gradient(90deg, #22c55e, #16a34a);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #4338ca;
+      font-weight: 600;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+
+    .faq-item button {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      font-size: 16px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      padding: 6px 0;
+    }
+
+    .faq-item .answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease;
+      color: var(--muted);
+    }
+
+    .faq-item.open .answer {
+      max-height: 120px;
+      margin-top: 6px;
+    }
+
+    .section .tag {
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tag span {
+      padding: 6px 10px;
+      background: #f1f5f9;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    @media (max-width: 900px) {
+      .links, .progress, .section { grid-column: span 12; }
+      .hero { flex-direction: column; align-items: flex-start; }
+      .hero .image { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-badge">CS</div>
+      <div>
+        <div style="font-size:14px;opacity:.8;">Cornstone</div>
+        <strong>Panel principal</strong>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button class="btn" id="ctaButton">Nueva solicitud</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card hero">
+      <div class="text">
+        <h2>Bienvenido de nuevo, <span>equipo Cornstone</span></h2>
+        <p>Gestiona tus recursos, revisa tu progreso y resuelve dudas desde este panel centralizado.</p>
+        <div class="pill">Estado general: En marcha</div>
+      </div>
+      <div class="image">Dashboard</div>
+    </section>
+
+    <section class="grid" style="margin-top:20px;">
+      <article class="card links">
+        <h3>Enlaces de interés</h3>
+        <p>Recursos rápidos para tu día a día.</p>
+        <ul class="list">
+          <li><a href="#">Manual de onboarding</a><span>PDF</span></li>
+          <li><a href="#">Calendario de entregas</a><span>Q2</span></li>
+          <li><a href="#">Contacto soporte</a><span>24/7</span></li>
+        </ul>
+      </article>
+
+      <article class="card progress">
+        <h3>Mi progreso</h3>
+        <p>Objetivos completados este mes.</p>
+        <div class="progress-bar"><span></span></div>
+        <div class="pill">68% completado</div>
+        <ul class="list">
+          <li>Revisión de métricas <strong>✔</strong></li>
+          <li>Plan de acción <strong>✔</strong></li>
+          <li>Hito de mejora <strong>⏳</strong></li>
+        </ul>
+      </article>
+
+      <article class="card section">
+        <h3>Sección</h3>
+        <p>Accede a módulos internos.</p>
+        <div class="tag">
+          <span>Formación</span>
+          <span>Operaciones</span>
+          <span>Finanzas</span>
+          <span>RRHH</span>
+        </div>
+        <button class="btn" style="margin-top:16px;">Ir al módulo</button>
+      </article>
+
+      <article class="card faq">
+        <h3>Preguntas frecuentes</h3>
+        <div class="faq-item">
+          <button type="button">¿Cómo actualizo mis datos? <span>+</span></button>
+          <div class="answer">Entra en tu perfil y haz clic en “Editar información”. Guarda los cambios para que se sincronicen.</div>
+        </div>
+        <div class="faq-item">
+          <button type="button">¿Dónde veo los reportes semanales? <span>+</span></button>
+          <div class="answer">Los reportes están en la sección de métricas, dentro del menú superior.</div>
+        </div>
+        <div class="faq-item">
+          <button type="button">¿Cómo contacto al equipo de soporte? <span>+</span></button>
+          <div class="answer">Usa el enlace “Contacto soporte” o envía un correo a soporte@cornstone.com.</div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll('.faq-item button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        item.classList.toggle('open');
+        btn.querySelector('span').textContent = item.classList.contains('open') ? '−' : '+';
+      });
+    });
+
+    document.getElementById('ctaButton').addEventListener('click', () => {
+      alert('Solicitud creada (demo).');
+    });
+  </script>
+</body>
+</html>
