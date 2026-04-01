@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cornstone - Dashboard</title>
+  <title>Cornstone - Mi formación</title>
   <style>
     :root {
-      --bg: #f6f7fb;
+      --bg: #f3f5f7;
       --card: #ffffff;
       --text: #1f2937;
       --muted: #6b7280;
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --border: #e5e7eb;
-      --shadow: 0 10px 25px rgba(0,0,0,0.06);
-      --radius: 16px;
+      --primary: #1e5f91;
+      --primary-2: #2c6ea3;
+      --border: #d6dde5;
+      --soft: #eef3f9;
+      --accent: #f6c94a;
+      --shadow: 0 2px 10px rgba(0,0,0,0.08);
+      --radius: 8px;
     }
 
     * { box-sizing: border-box; }
@@ -26,310 +28,311 @@
     }
 
     .topbar {
-      background: #0f172a;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 28px;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 10px 18px 0;
       position: sticky;
       top: 0;
       z-index: 10;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
     }
 
-    .brand {
+    .tabs {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 24px;
+      padding: 6px 6px 0;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .tab {
+      padding: 10px 8px 12px;
+      font-size: 14px;
+      color: #4b5563;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .tab.active {
+      color: #111827;
       font-weight: 600;
-      letter-spacing: 0.3px;
     }
 
-    .brand-badge {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #38bdf8, #2563eb);
-      display: grid;
-      place-items: center;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    .top-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .btn {
-      border: none;
+    .tab.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -2px;
+      height: 3px;
       background: var(--primary);
-      color: #fff;
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s ease;
     }
 
-    .btn:hover { background: var(--primary-dark); }
+    .topbar .alert {
+      margin-left: auto;
+      background: #f4c84a;
+      color: #111827;
+      border: 1px solid #e0b53c;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
 
     .container {
-      max-width: 1200px;
-      margin: 28px auto 60px;
-      padding: 0 20px;
+      max-width: 1150px;
+      margin: 18px auto 40px;
+      padding: 0 16px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 20px;
+      grid-template-columns: 2fr 1fr;
+      gap: 16px;
     }
 
     .card {
       background: var(--card);
-      border-radius: var(--radius);
-      padding: 20px;
-      box-shadow: var(--shadow);
       border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 14px;
     }
 
-    .card h3 { margin: 0 0 8px; }
-    .card p { margin: 0; color: var(--muted); }
-
-    .hero {
-      grid-column: span 12;
+    .card-header {
+      background: var(--soft);
+      border: 1px solid #d8e2ee;
+      border-radius: 6px;
+      padding: 8px 10px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+      gap: 8px;
+      font-weight: 600;
+      color: #1f4d74;
+      font-size: 13px;
+      text-transform: uppercase;
     }
 
-    .hero .text {
-      max-width: 600px;
+    .card-body { padding: 10px 6px 6px; }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 700;
+      margin: 10px 0 6px;
     }
 
-    .hero .text h2 {
-      margin: 0 0 10px;
-      font-size: 28px;
-    }
-
-    .hero .text span {
-      color: var(--primary);
-    }
-
-    .hero .image {
-      flex: 0 0 220px;
-      height: 140px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, #fde68a, #f97316);
+    .link-list {
+      margin: 0;
+      padding: 0 0 4px 0;
+      list-style: none;
       display: grid;
-      place-items: center;
-      color: #7c2d12;
+      gap: 6px;
+    }
+
+    .link-list a {
+      color: #1f4d74;
+      text-decoration: underline;
+      font-size: 13px;
+    }
+
+    .divider { border-top: 1px solid var(--border); margin: 10px 0; }
+
+    .btn-outline {
+      border: 1px solid #8aa8c0;
+      background: #fff;
+      color: #1f4d74;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 2px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .badge {
+      background: #e6eef6;
+      color: #3b5b73;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
       font-weight: 700;
     }
 
-    .links { grid-column: span 4; }
-    .progress { grid-column: span 4; }
-    .section { grid-column: span 4; }
-    .faq { grid-column: span 12; }
+    .progress-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f7fbff;
+      border: 1px solid #e2e8f0;
+      padding: 10px 12px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: 600;
+    }
 
-    .list {
-      margin: 14px 0 0;
+    .faq-list {
+      margin: 8px 0 0;
       padding: 0;
       list-style: none;
       display: grid;
       gap: 10px;
     }
 
-    .list li {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 14px;
-      border-radius: 12px;
-      background: #f8fafc;
-      border: 1px solid var(--border);
-    }
-
-    .list a {
-      color: var(--text);
-      text-decoration: none;
+    .faq-list li {
+      font-size: 13px;
       font-weight: 600;
+      color: #1f2937;
     }
 
-    .progress-bar {
-      margin-top: 12px;
-      width: 100%;
-      height: 12px;
-      background: #e2e8f0;
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .progress-bar span {
-      display: block;
-      height: 100%;
-      width: 68%;
-      background: linear-gradient(90deg, #22c55e, #16a34a);
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: #eef2ff;
-      color: #4338ca;
-      font-weight: 600;
-      font-size: 12px;
+    .btn-small {
       margin-top: 10px;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-      padding: 14px 0;
-    }
-
-    .faq-item button {
-      width: 100%;
-      background: none;
-      border: none;
-      text-align: left;
-      font-size: 16px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-      padding: 6px 0;
-    }
-
-    .faq-item .answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.2s ease;
-      color: var(--muted);
-    }
-
-    .faq-item.open .answer {
-      max-height: 120px;
-      margin-top: 6px;
-    }
-
-    .section .tag {
-      margin-top: 12px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .tag span {
+      font-size: 11px;
       padding: 6px 10px;
-      background: #f1f5f9;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 600;
-      color: #475569;
+      border-radius: 2px;
+      border: 1px solid #8aa8c0;
+      background: #fff;
+      color: #1f4d74;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .section-wide {
+      margin-top: 16px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding-top: 8px;
+    }
+
+    .split .col {
+      border-right: 1px solid var(--border);
+      padding-right: 12px;
+    }
+
+    .split .col:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .subtitle {
+      font-size: 11px;
+      font-weight: 700;
+      color: #6b7280;
+      text-transform: uppercase;
+      margin-bottom: 6px;
     }
 
     @media (max-width: 900px) {
-      .links, .progress, .section { grid-column: span 12; }
-      .hero { flex-direction: column; align-items: flex-start; }
-      .hero .image { width: 100%; }
+      .grid { grid-template-columns: 1fr; }
+      .split { grid-template-columns: 1fr; }
+      .split .col { border-right: none; padding-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+      .split .col:last-child { border-bottom: none; }
+      .topbar .alert { display: none; }
     }
   </style>
 </head>
 <body>
   <header class="topbar">
-    <div class="brand">
-      <div class="brand-badge">CS</div>
-      <div>
-        <div style="font-size:14px;opacity:.8;">Cornstone</div>
-        <strong>Panel principal</strong>
-      </div>
-    </div>
-    <div class="top-actions">
-      <button class="btn" id="ctaButton">Nueva solicitud</button>
-    </div>
+    <nav class="tabs">
+      <a class="tab" href="#">Explora</a>
+      <a class="tab active" href="#">Mi formación</a>
+      <a class="tab" href="#">Calendario</a>
+      <a class="tab" href="#">Contacto</a>
+      <span class="alert">¡No te pierdas las novedades!</span>
+    </nav>
   </header>
 
   <main class="container">
-    <section class="card hero">
-      <div class="text">
-        <h2>Bienvenido de nuevo, <span>equipo Cornstone</span></h2>
-        <p>Gestiona tus recursos, revisa tu progreso y resuelve dudas desde este panel centralizado.</p>
-        <div class="pill">Estado general: En marcha</div>
+    <section class="grid">
+      <!-- Enlaces de interés -->
+      <article class="card">
+        <div class="card-header">🔗 ENLACES DE INTERÉS</div>
+        <div class="card-body">
+          <div class="section-title">Formación externa</div>
+          <ul class="link-list">
+            <li><a href="#">Formación ad hoc: consulta el procedimiento</a></li>
+            <li><a href="#">Justifica tu petición</a></li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <div class="section-title">Accede a tu expediente</div>
+          <ul class="link-list">
+            <li><a href="#">Consulta o certifica tu expediente formativo</a></li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <div class="section-title">Oferta formativa</div>
+          <button class="btn-outline">EXPLORAR MÁS CURSOS DISPONIBLES</button>
+        </div>
+      </article>
+
+      <!-- Columna derecha -->
+      <div>
+        <article class="card" style="margin-bottom:16px;">
+          <div class="card-header">🎓 MI PROGRESO</div>
+          <div class="card-body">
+            <div class="progress-item">
+              <span>Formación asignada u obligatoria</span>
+              <span class="badge">2</span>
+            </div>
+            <div class="progress-item">
+              <span>Formación en progreso</span>
+              <span class="badge">2</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">❓ PREGUNTAS FRECUENTES</div>
+          <div class="card-body">
+            <ul class="faq-list">
+              <li>¿Cómo va mi formación?</li>
+              <li>¿Cómo consulto el estado de un curso?</li>
+              <li>¿Cómo cancelo una formación?</li>
+            </ul>
+            <button class="btn-small">VER TODAS LAS FAQ'S</button>
+          </div>
+        </article>
       </div>
-      <div class="image">Dashboard</div>
     </section>
 
-    <section class="grid" style="margin-top:20px;">
-      <article class="card links">
-        <h3>Enlaces de interés</h3>
-        <p>Recursos rápidos para tu día a día.</p>
-        <ul class="list">
-          <li><a href="#">Manual de onboarding</a><span>PDF</span></li>
-          <li><a href="#">Calendario de entregas</a><span>Q2</span></li>
-          <li><a href="#">Contacto soporte</a><span>24/7</span></li>
-        </ul>
-      </article>
-
-      <article class="card progress">
-        <h3>Mi progreso</h3>
-        <p>Objetivos completados este mes.</p>
-        <div class="progress-bar"><span></span></div>
-        <div class="pill">68% completado</div>
-        <ul class="list">
-          <li>Revisión de métricas <strong>✔</strong></li>
-          <li>Plan de acción <strong>✔</strong></li>
-          <li>Hito de mejora <strong>⏳</strong></li>
-        </ul>
-      </article>
-
-      <article class="card section">
-        <h3>Sección</h3>
-        <p>Accede a módulos internos.</p>
-        <div class="tag">
-          <span>Formación</span>
-          <span>Operaciones</span>
-          <span>Finanzas</span>
-          <span>RRHH</span>
+    <!-- Sección inferior -->
+    <section class="card section-wide">
+      <div class="card-header">📁 SECCIÓN</div>
+      <div class="card-body split">
+        <div class="col">
+          <div class="subtitle">Interlocutores</div>
+          <div class="section-title">Guía para solicitar nueva formación</div>
+          <ul class="link-list">
+            <li><a href="#">Documento de solicitud</a></li>
+          </ul>
         </div>
-        <button class="btn" style="margin-top:16px;">Ir al módulo</button>
-      </article>
-
-      <article class="card faq">
-        <h3>Preguntas frecuentes</h3>
-        <div class="faq-item">
-          <button type="button">¿Cómo actualizo mis datos? <span>+</span></button>
-          <div class="answer">Entra en tu perfil y haz clic en “Editar información”. Guarda los cambios para que se sincronicen.</div>
+        <div class="col">
+          <div class="subtitle">Responsables</div>
+          <div class="section-title">Consulta tus informes de formación</div>
+          <ul class="link-list">
+            <li><a href="#">Ver informes</a></li>
+          </ul>
         </div>
-        <div class="faq-item">
-          <button type="button">¿Dónde veo los reportes semanales? <span>+</span></button>
-          <div class="answer">Los reportes están en la sección de métricas, dentro del menú superior.</div>
-        </div>
-        <div class="faq-item">
-          <button type="button">¿Cómo contacto al equipo de soporte? <span>+</span></button>
-          <div class="answer">Usa el enlace “Contacto soporte” o envía un correo a soporte@cornstone.com.</div>
-        </div>
-      </article>
+      </div>
     </section>
   </main>
 
   <script>
-    document.querySelectorAll('.faq-item button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.parentElement;
-        item.classList.toggle('open');
-        btn.querySelector('span').textContent = item.classList.contains('open') ? '−' : '+';
+    // Simple tabbar active toggle (demo)
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
       });
-    });
-
-    document.getElementById('ctaButton').addEventListener('click', () => {
-      alert('Solicitud creada (demo).');
     });
   </script>
 </body>
