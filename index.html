@@ -288,9 +288,83 @@
       margin-bottom: 6px;
     }
 
+    .view { display: none; }
+    .view.active { display: block; }
+
+    .explore-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .explore-grid.two-col {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .explore-grid.three-col {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card-header .chevron {
+      margin-left: auto;
+      color: #1e5f91;
+    }
+
+    .subtabs {
+      display: flex;
+      gap: 18px;
+      border-bottom: 1px solid var(--border);
+      margin: 10px 0 8px;
+    }
+
+    .subtab {
+      background: none;
+      border: none;
+      padding: 8px 4px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #6b7280;
+      cursor: pointer;
+    }
+
+    .subtab.active {
+      color: #111827;
+      border-bottom: 2px solid var(--primary);
+      margin-bottom: -1px;
+    }
+
+    .subtab-panel {
+      display: none;
+      padding: 6px 2px 4px;
+    }
+
+    .subtab-panel.active {
+      display: block;
+    }
+
+    .simple-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      font-size: 13px;
+      color: #374151;
+    }
+
+    .simple-list li {
+      padding-bottom: 8px;
+      border-bottom: 1px solid #eef1f4;
+    }
+
+    .simple-list li:last-child {
+      border-bottom: none;
+    }
+
     @media (max-width: 900px) {
       .grid { grid-template-columns: 1fr; }
       .split { grid-template-columns: 1fr; }
+      .explore-grid.two-col,
+      .explore-grid.three-col { grid-template-columns: 1fr; }
       .split .col { border-right: none; padding-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
       .split .col:last-child { border-bottom: none; }
       .topbar .alert { display: none; }
@@ -300,8 +374,8 @@
 <body>
   <header class="topbar">
     <nav class="tabs">
-      <a class="tab" href="#">Explora</a>
-      <a class="tab active" href="#">Mi formación</a>
+      <a class="tab" href="#" data-view="explora">Explora</a>
+      <a class="tab active" href="#" data-view="formacion">Mi formación</a>
       <a class="tab" href="#">Calendario <span class="external-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M10 7h7v7"/></svg></span></a>
       <a class="tab tab-contact" href="#">Contacto</a>
       <span class="alert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.4 6 .9-4.3 4.2 1 6-5.3-2.8-5.3 2.8 1-6-4.3-4.2 6-.9z"/></svg>Novedades</span>
@@ -309,90 +383,259 @@
   </header>
 
   <main class="container">
-    <section class="grid">
-      <!-- Enlaces de interés -->
-      <article class="card">
-        <div class="card-header"><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 1 0-7l1-1a5 5 0 0 1 7 7l-1 1"/><path d="M14 11a5 5 0 0 1 0 7l-1 1a5 5 0 0 1-7-7l1-1"/></svg></span>ENLACES DE INTERÉS</div>
-        <div class="card-body">
-          <div class="section-title">Formación externa</div>
-          <ul class="link-list">
-            <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Formación ad hoc: consulta el procedimiento</span></a></li>
-            <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Justifica tu petición</span></a></li>
-          </ul>
-
-          <div class="divider"></div>
-
-          <div class="section-title">Accede a tu expediente</div>
-          <ul class="link-list">
-            <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Consulta o certifica tu expediente formativo</span></a></li>
-          </ul>
-
-          <div class="divider"></div>
-
-          <div class="section-title">Oferta formativa</div>
-          <button class="btn-outline">EXPLORAR MÁS CURSOS DISPONIBLES</button>
-        </div>
-      </article>
-
-      <!-- Columna derecha -->
-      <div>
-        <article class="card" style="margin-bottom:16px;">
-          <div class="card-header"><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h4v4H3z"/><path d="M10 13h4v8h-4z"/><path d="M17 9h4v12h-4z"/></svg></span>MI PROGRESO</div>
+    <section id="view-explora" class="view">
+      <div class="explore-grid two-col">
+        <article class="card">
+          <div class="card-header">
+            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7h8"/><path d="M4 7h4"/><path d="M4 17h4"/><path d="M12 17h8"/><circle cx="9" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></span>
+            FÓRMATE EN NUESTRAS ACADEMIAS
+            <span class="chevron" aria-hidden="true">›</span>
+          </div>
           <div class="card-body">
-            <div class="progress-item">
-              <span>Formación asignada u obligatoria</span>
-              <span class="badge">2</span>
+            <div class="subtabs" role="tablist">
+              <button class="subtab" data-target="academia-ia" type="button">Academia IA</button>
+              <button class="subtab active" data-target="academia-datos" type="button">Academia Datos</button>
             </div>
-            <div class="progress-item">
-              <span>Formación en progreso</span>
-              <span class="badge">2</span>
+            <div class="subtab-panel" id="academia-ia">
+              <ul class="simple-list">
+                <li>Ruta IA esencial</li>
+                <li>Bootcamp IA generativa</li>
+                <li>Laboratorio de prompts</li>
+              </ul>
+            </div>
+            <div class="subtab-panel active" id="academia-datos">
+              <ul class="simple-list">
+                <li>Itinerarios Datos</li>
+                <li>Portal del Dato</li>
+                <li>Playlist Excel y Datos</li>
+                <li>Playlist Power BI desde cero</li>
+                <li>Playlist Fundamentos SQL</li>
+              </ul>
             </div>
           </div>
         </article>
 
         <article class="card">
-          <div class="card-header"><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.9.3-1.5 1.1-1.5 2.1"/><path d="M12 17h.01"/></svg></span>PREGUNTAS FRECUENTES</div>
+          <div class="card-header">
+            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"/><path d="M6 16l4-4 3 3 5-6"/><path d="M7 7h10"/></svg></span>
+            AVANZA EN TUS COMPETENCIAS
+            <span class="chevron" aria-hidden="true">›</span>
+          </div>
           <div class="card-body">
-            <ul class="faq-list">
-              <li>¿Cómo va mi formación?</li>
-              <li>¿Cómo consulto el estado de un curso?</li>
-              <li>¿Cómo cancelo una formación?</li>
+            <div class="subtabs" role="tablist">
+              <button class="subtab" data-target="competencias-agilidad" type="button">Agilidad</button>
+              <button class="subtab active" data-target="competencias-liderazgo" type="button">Liderazgo y Competencias</button>
+            </div>
+            <div class="subtab-panel" id="competencias-agilidad">
+              <ul class="simple-list">
+                <li>Kit Agile starter</li>
+                <li>Scrum essentials</li>
+                <li>Kanban para equipos</li>
+              </ul>
+            </div>
+            <div class="subtab-panel active" id="competencias-liderazgo">
+              <ul class="simple-list">
+                <li>Programa FOCUS</li>
+                <li>Itinerario o evento 1</li>
+                <li>Itinerario o evento 2</li>
+                <li>Playlist 1</li>
+                <li>Playlist 2</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="explore-grid three-col" style="margin-top:16px;">
+        <article class="card">
+          <div class="card-header">
+            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20l9-5-9-5-9 5 9 5"/><path d="M12 12l9-5-9-5-9 5 9 5"/></svg></span>
+            AVANZA EN TUS PRIMEROS PASOS
+            <span class="chevron" aria-hidden="true">›</span>
+          </div>
+          <div class="card-body">
+            <ul class="simple-list">
+              <li>Acceso Comunidades promoción vertical</li>
+              <li>Itinerario Onboarding Comunidad IT</li>
             </ul>
-            <button class="btn-small">VER TODAS LAS FAQ'S</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h7l2 2h9v8a2 2 0 0 1-2 2H3z"/><path d="M3 7v10"/></svg></span>
+            AVANZA EN TU CONOCIMIENTO Y ESPECIALIZACIÓN
+            <span class="chevron" aria-hidden="true">›</span>
+          </div>
+          <div class="card-body">
+            <div class="subtabs" role="tablist">
+              <button class="subtab" data-target="especializacion-itinerarios" type="button">Itinerarios</button>
+              <button class="subtab active" data-target="especializacion-catalogo" type="button">Catálogo internacional</button>
+              <button class="subtab" data-target="especializacion-playlists" type="button">Playlists</button>
+            </div>
+            <div class="subtab-panel" id="especializacion-itinerarios">
+              <ul class="simple-list">
+                <li>Itinerario analítica avanzada</li>
+                <li>Ruta arquitectura cloud</li>
+              </ul>
+            </div>
+            <div class="subtab-panel active" id="especializacion-catalogo">
+              <ul class="simple-list">
+                <li>Lista de cursos</li>
+                <li>Solicitud</li>
+                <li>Eureka</li>
+              </ul>
+            </div>
+            <div class="subtab-panel" id="especializacion-playlists">
+              <ul class="simple-list">
+                <li>Playlist data engineering</li>
+                <li>Playlist UX research</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20"/></svg></span>
+            AVANZA SIN FRONTERAS
+            <span class="chevron" aria-hidden="true">›</span>
+          </div>
+          <div class="card-body">
+            <div class="subtabs" role="tablist">
+              <button class="subtab" data-target="fronteras-servicios" type="button">Servicios centrales</button>
+              <button class="subtab active" data-target="fronteras-sucursales" type="button">Sucursales</button>
+              <button class="subtab" data-target="fronteras-playlists" type="button">Playlists</button>
+            </div>
+            <div class="subtab-panel" id="fronteras-servicios">
+              <ul class="simple-list">
+                <li>Programa movilidad interna</li>
+                <li>Guía de procedimientos</li>
+              </ul>
+            </div>
+            <div class="subtab-panel active" id="fronteras-sucursales">
+              <ul class="simple-list">
+                <li>Guía procedimiento de reembolso</li>
+                <li>Programa próximamente</li>
+              </ul>
+            </div>
+            <div class="subtab-panel" id="fronteras-playlists">
+              <ul class="simple-list">
+                <li>Playlist internacionalización</li>
+                <li>Playlist idiomas</li>
+              </ul>
+            </div>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- Sección inferior -->
-    <section class="card section-wide">
-      <div class="card-header"><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h7l2 2h9v8a2 2 0 0 1-2 2H3z"/><path d="M3 7v10"/></svg></span>SECCIÓN</div>
-      <div class="card-body split">
-        <div class="col">
-          <div class="subtitle">Interlocutores</div>
-          <div class="section-title">Guía para solicitar nueva formación</div>
-          <ul class="link-list">
-            <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Documento de solicitud</span></a></li>
-          </ul>
+    <section id="view-formacion" class="view active">
+      <section class="grid">
+        <!-- Enlaces de interés -->
+        <article class="card">
+          <div class="card-header"><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 1 0-7l1-1a5 5 0 0 1 7 7l-1 1"/><path d="M14 11a5 5 0 0 1 0 7l-1 1a5 5 0 0 1-7-7l1-1"/></svg></span>ENLACES DE INTERÉS</div>
+          <div class="card-body">
+            <div class="section-title">Formación externa</div>
+            <ul class="link-list">
+              <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Formación ad hoc: consulta el procedimiento</span></a></li>
+              <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Justifica tu petición</span></a></li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <div class="section-title">Accede a tu expediente</div>
+            <ul class="link-list">
+              <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Consulta o certifica tu expediente formativo</span></a></li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <div class="section-title">Oferta formativa</div>
+            <button class="btn-outline">EXPLORAR MÁS CURSOS DISPONIBLES</button>
+          </div>
+        </article>
+
+        <!-- Columna derecha -->
+        <div>
+          <article class="card" style="margin-bottom:16px;">
+            <div class="card-header"><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h4v4H3z"/><path d="M10 13h4v8h-4z"/><path d="M17 9h4v12h-4z"/></svg></span>MI PROGRESO</div>
+            <div class="card-body">
+              <div class="progress-item">
+                <span>Formación asignada u obligatoria</span>
+                <span class="badge">2</span>
+              </div>
+              <div class="progress-item">
+                <span>Formación en progreso</span>
+                <span class="badge">2</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-header"><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.9.3-1.5 1.1-1.5 2.1"/><path d="M12 17h.01"/></svg></span>PREGUNTAS FRECUENTES</div>
+            <div class="card-body">
+              <ul class="faq-list">
+                <li>¿Cómo va mi formación?</li>
+                <li>¿Cómo consulto el estado de un curso?</li>
+                <li>¿Cómo cancelo una formación?</li>
+              </ul>
+              <button class="btn-small">VER TODAS LAS FAQ'S</button>
+            </div>
+          </article>
         </div>
-        <div class="col">
-          <div class="subtitle">Responsables</div>
-          <div class="section-title">Consulta tus informes de formación</div>
-          <ul class="link-list">
-            <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Ver informes</span></a></li>
-          </ul>
+      </section>
+
+      <!-- Sección inferior -->
+      <section class="card section-wide">
+        <div class="card-header"><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h7l2 2h9v8a2 2 0 0 1-2 2H3z"/><path d="M3 7v10"/></svg></span>SECCIÓN</div>
+        <div class="card-body split">
+          <div class="col">
+            <div class="subtitle">Interlocutores</div>
+            <div class="section-title">Guía para solicitar nueva formación</div>
+            <ul class="link-list">
+              <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Documento de solicitud</span></a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <div class="subtitle">Responsables</div>
+            <div class="section-title">Consulta tus informes de formación</div>
+            <ul class="link-list">
+              <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Ver informes</span></a></li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </section>
     </section>
   </main>
 
   <script>
-    // Simple tabbar active toggle (demo)
-    document.querySelectorAll('.tab').forEach(tab => {
+    const viewTabs = document.querySelectorAll('.tab[data-view]');
+    const views = document.querySelectorAll('.view');
+
+    viewTabs.forEach(tab => {
       tab.addEventListener('click', (e) => {
         e.preventDefault();
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        viewTabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
+        const viewId = tab.dataset.view;
+        views.forEach(view => {
+          view.classList.toggle('active', view.id === `view-${viewId}`);
+        });
+      });
+    });
+
+    document.querySelectorAll('.subtabs').forEach(subtabGroup => {
+      const tabs = subtabGroup.querySelectorAll('.subtab');
+      tabs.forEach(button => {
+        button.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          button.classList.add('active');
+          const parentCard = subtabGroup.closest('.card');
+          parentCard.querySelectorAll('.subtab-panel').forEach(panel => {
+            panel.classList.toggle('active', panel.id === button.dataset.target);
+          });
+        });
       });
     });
   </script>
