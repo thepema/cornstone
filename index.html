@@ -52,6 +52,24 @@
       position: relative;
     }
 
+    .tab-contact {
+      color: #1e5f91;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .external-icon {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 6px;
+      color: #6b7280;
+    }
+
+    .external-icon svg {
+      width: 12px;
+      height: 12px;
+    }
+
     .tab.active {
       color: #111827;
       font-weight: 600;
@@ -135,6 +153,19 @@
       color: #1f4d74;
       text-decoration: underline;
       font-size: 13px;
+    }
+
+    .link-with-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .link-with-icon .link-icon {
+      width: 12px;
+      height: 12px;
+      color: #6b7280;
+      flex: 0 0 auto;
     }
 
     .divider { border-top: 1px solid var(--border); margin: 10px 0; }
@@ -241,8 +272,8 @@
     <nav class="tabs">
       <a class="tab" href="#">Explora</a>
       <a class="tab active" href="#">Mi formación</a>
-      <a class="tab" href="#">Calendario</a>
-      <a class="tab" href="#">Contacto</a>
+      <a class="tab" href="#">Calendario <span class="external-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M10 7h7v7"/></svg></span></a>
+      <a class="tab tab-contact" href="#">Contacto</a>
       <span class="alert">¡No te pierdas las novedades!</span>
     </nav>
   </header>
@@ -255,15 +286,15 @@
         <div class="card-body">
           <div class="section-title">Formación externa</div>
           <ul class="link-list">
-            <li><a href="#">Formación ad hoc: consulta el procedimiento</a></li>
-            <li><a href="#">Justifica tu petición</a></li>
+            <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Formación ad hoc: consulta el procedimiento</span></a></li>
+            <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Justifica tu petición</span></a></li>
           </ul>
 
           <div class="divider"></div>
 
           <div class="section-title">Accede a tu expediente</div>
           <ul class="link-list">
-            <li><a href="#">Consulta o certifica tu expediente formativo</a></li>
+            <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Consulta o certifica tu expediente formativo</span></a></li>
           </ul>
 
           <div class="divider"></div>
@@ -311,14 +342,14 @@
           <div class="subtitle">Interlocutores</div>
           <div class="section-title">Guía para solicitar nueva formación</div>
           <ul class="link-list">
-            <li><a href="#">Documento de solicitud</a></li>
+            <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Documento de solicitud</span></a></li>
           </ul>
         </div>
         <div class="col">
           <div class="subtitle">Responsables</div>
           <div class="section-title">Consulta tus informes de formación</div>
           <ul class="link-list">
-            <li><a href="#">Ver informes</a></li>
+            <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Ver informes</span></a></li>
           </ul>
         </div>
       </div>
