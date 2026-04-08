@@ -18,24 +18,12 @@
         --bg: #f7f7f7;
         --card: #ffffff;
         --text: #1f2937;
-        --text-dark: #111827;
-        --text-strong: #161616;
-        --text-muted: #616161;
-        --text-black: #0a0a0a;
         --muted: #6b7280;
         --primary: #005c9f;
         --primary-2: #2c6ea3;
         --border: #d6dde5;
-        --border-light: #e5e7eb;
-        --border-muted: #b3b3b3;
-        --border-strong: #787777;
-        --border-faint: #dadada;
         --soft: #e6eeff;
-        --soft-alt: #e6eef6;
-        --soft-alpha: #e6eeff80;
-        --alert-bg: #f8bb00;
-        --alert-text: #000000;
-        --badge-text: #1f4d74;
+        --accent: #f6c94a;
         --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
         --radius: 8px;
       }
@@ -55,9 +43,7 @@
         color: var(--text);
       }
       .topbar {
-        background: var(--card);
-        border-bottom: 1px solid var(--border-muted);
-        padding: 10px 18px 0;
+        background: #fff;
         position: sticky;
         top: 0;
         z-index: 10;
@@ -66,14 +52,14 @@
         display: flex;
         align-items: center;
         gap: 24px;
-        cursor: pointer;
         padding: 6px 6px 0;
-        border-bottom: 2px solid var(--border-light);
+        border-bottom: 2px solid #e5e7eb;
+        justify-content: space-between;
       }
       .tab {
         padding: 10px 8px 12px;
-        font-size: 14px;
-        color: var(--text-muted);
+        font-size: 16px;
+        color: #616161;
         text-decoration: none;
         position: relative;
         font-weight: 400;
@@ -87,14 +73,14 @@
         display: inline-flex;
         align-items: center;
         margin-left: 6px;
-        color: var(--muted);
+        color: #6b7280;
       }
       .external-icon svg {
         width: 12px;
         height: 12px;
       }
       .tab.active {
-        color: var(--text-dark);
+        color: #111827;
         font-weight: bold;
       }
       .tab.active::after {
@@ -106,10 +92,10 @@
         height: 3px;
         background: var(--primary);
       }
-      .topbar .alert {
-        margin-left: auto;
-        background: var(--alert-bg);
-        color: var(--alert-text);
+      .alert {
+        cursor: pointer;
+        background: #f8bb00;
+        color: #000000;
         padding: 4px 16px 4px 16px;
         border-radius: 5px;
         font-size: 16px;
@@ -118,11 +104,15 @@
         align-items: center;
         gap: 6px;
         letter-spacing: 0.2px;
-      }
+        margin-right: 10px;   
+       }
+       .alert a {
+        color: #000000;
+       }
       .topbar .alert svg {
         width: 12px;
         height: 12px;
-        color: var(--text-dark);
+        color: #111827;
       }
       .container {
         margin: 18px auto 40px;
@@ -181,11 +171,13 @@
         gap: 6px;
       }
       .link {
-        color: var(--primary);
         text-decoration: underline;
         margin: 12px 0px 12px 0px;
         font-size: 14px;
         font-weight: 500;
+      }
+      .link a {
+        color: var(--primary);
       }
       .link-list a {
         color: var(--primary);
@@ -209,7 +201,7 @@
       }
       .btn-outline {
         border: 1px solid var(--primary);
-        background: var(--card);
+        background: #fff;
         color: var(--primary);
         font-size: 12px;
         padding: 6px 10px;
@@ -218,8 +210,8 @@
         font-weight: 600;
       }
       .badge {
-        background: var(--soft-alt);
-        color: var(--badge-text);
+        background: #e6eef6;
+        color: #1f4d74;
         width: 20px;
         height: 20px;
         display: inline-flex;
@@ -229,16 +221,16 @@
         font-size: 11px;
         font-weight: 700;
       }
-      .progress-item {
+      .progress-item a{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: var(--soft-alpha);
+        background: #e6eeff80;
         padding: 10px 12px;
         border-radius: 6px;
         margin-bottom: 8px;
         font-size: 13px;
-        color: var(--text-strong);
+        color: #161616;
         font-weight: bold;
       }
       .faq-accordion {
@@ -248,7 +240,7 @@
       }
       .faq-item {
         border-radius: 6px;
-        background: var(--card);
+        background: #fff;
         overflow: hidden;
       }
       .faq-trigger {
@@ -262,7 +254,7 @@
         padding: 10px 12px;
         font-size: 16px;
         font-weight: bold;
-        color: var(--text-black);
+        color: #0A0A0A;
         text-align: left;
         cursor: pointer;
       }
@@ -280,7 +272,7 @@
         display: none;
         padding: 0 12px 12px;
         font-size: 14px;
-        color: var(--text-muted);
+        color: #616161;
         line-height: 1.4;
       }
       .faq-item.active .faq-content {
@@ -308,7 +300,7 @@
         padding: 6px 10px;
         border-radius: 2px;
         border: 1px solid var(--primary);
-        background: var(--card);
+        background: #fff;
         color: var(--primary);
         font-weight: 700;
         cursor: pointer;
@@ -323,7 +315,7 @@
         padding-top: 8px;
       }
       .split .col {
-        border-right: 1px solid var(--border-strong);
+        border-right: 1px solid #787777;
         padding-right: 12px;
         padding-top: 12px;
       }
@@ -337,7 +329,7 @@
         color: var(--primary);
         text-transform: uppercase;
         margin-bottom: 6px;
-        background-color: var(--soft);
+        background-color: #e6eeff;
         padding: 4px 11px 4px 12px;
         border-radius: 16px;
         width: fit-content;
@@ -378,11 +370,11 @@
         padding: 4px 16px 4px 16px;
         font-size: 16px;
         font-weight: 400;
-        color: var(--text-muted);
+        color: #616161;
         cursor: pointer;
       }
       .subtab.active {
-        color: var(--text-strong);
+        color: #161616;
         font-weight: bold;
         border-bottom: 2px solid var(--primary);
         margin-bottom: -1px;
@@ -402,12 +394,15 @@
         display: grid;
         gap: 10px;
         font-size: 16px;
-        color: var(--text-muted);
         font-weight: bold;
       }
       .simple-list li {
         padding-bottom: 15px;
-        border-bottom: 1px solid var(--border-faint);
+        border-bottom: 1px solid #dadada;
+        color: #616161 !important;
+      }
+      .simple-list li > a{
+        color: #616161 !important;
       }
       .simple-list li:last-child {
         border-bottom: none;
@@ -436,86 +431,99 @@
           display: none;
         }
       }
+      .no-underline{
+        text-decoration: none;
+      }
     </style>
   </head>
 
   <body>
     <div class="topbar">
       <nav class="tabs">
-        <a class="tab active" data-view="explora">Explora</a>
-        <a class="tab" data-view="formacion">Mi formación</a>
-        <a class="tab" href="#">
-          Calendario
-          <span class="external-icon" aria-hidden="true">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
+        <div class="tab">
+
+          <a class="tab active" data-view="explora">Explora</a>
+          <a class="tab" data-view="formacion">Mi formación</a>
+          <a class="tab" href="#">
+            Calendario
+            <span class="external-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
                 d="M12.6667 12.6667H3.33333V3.33333H8V2H3.33333C2.59333 2 2 2.6 2 3.33333V12.6667C2 13.4 2.59333 14 3.33333 14H12.6667C13.4 14 14 13.4 14 12.6667V8H12.6667V12.6667ZM9.33333 2V3.33333H11.7267L5.17333 9.88667L6.11333 10.8267L12.6667 4.27333V6.66667H14V2H9.33333Z"
                 fill="#005C9F" />
-            </svg>
-          </span>
-        </a>
-        <a class="tab tab-contact" href="#">Contacto</a> <span class="alert">¡No te pierdas las novedades!</span>
+              </svg>
+            </span>
+          </a>
+          <a class="tab tab-contact" href="#">Contacto</a> 
+        </div>
+        <div>
+          <span class="alert"> <a class="no-underline" href="#">¡Explora las novedades!</a></span>
+        </div>
+
       </nav>
     </div>
 
     <main class="container">
-      <section id="view-explora" class="view">
+      <section id="view-explora" class="view active">
         <div class="explore-grid two-col">
           <article class="card">
-            <div class="card-header">
-              <span class="card-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M12.9988 8.571C12.2088 8.571 11.5688 9.211 11.5688 10.001C11.5688 10.791 12.2088 11.431 12.9988 11.431C13.7888 11.431 14.4288 10.791 14.4288 10.001C14.4288 9.211 13.7888 8.571 12.9988 8.571Z"
-                    fill="#005C9F" />
+            <a class="no-underline" href="#">
+              <div class="card-header">
+                <span class="card-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12.9988 8.571C12.2088 8.571 11.5688 9.211 11.5688 10.001C11.5688 10.791 12.2088 11.431 12.9988 11.431C13.7888 11.431 14.4288 10.791 14.4288 10.001C14.4288 9.211 13.7888 8.571 12.9988 8.571Z"
+                      fill="#005C9F" />
 
-                  <path
-                    d="M13.2088 3.001C9.36885 2.891 6.20885 5.871 6.01885 9.641L4.09885 12.201C3.84885 12.531 4.08885 13.001 4.49885 13.001H5.99885V16.001C5.99885 17.101 6.89885 18.001 7.99885 18.001H8.99885V20.001C8.99885 20.551 9.44885 21.001 9.99885 21.001H14.9988C15.5488 21.001 15.9988 20.551 15.9988 20.001V16.321C18.4388 15.161 20.0988 12.641 19.9988 9.741C19.8588 6.121 16.8188 3.111 13.2088 3.001ZM15.9988 10.001C15.9988 10.131 15.9888 10.261 15.9788 10.391L16.8088 11.051C16.8888 11.111 16.9088 11.211 16.8588 11.301L16.0588 12.691C16.0088 12.781 15.8988 12.811 15.8188 12.781L14.8288 12.381C14.6188 12.541 14.3988 12.671 14.1588 12.771L13.9988 13.831C13.9888 13.931 13.8988 14.001 13.7988 14.001H12.1988C12.0988 14.001 12.0188 13.931 11.9988 13.831L11.8488 12.771C11.5988 12.671 11.3788 12.541 11.1688 12.381L10.1788 12.781C10.0888 12.811 9.97885 12.781 9.92885 12.691L9.12885 11.301C9.07885 11.221 9.09885 11.111 9.17885 11.051L10.0188 10.391C10.0088 10.261 9.99885 10.131 9.99885 10.001C9.99885 9.871 10.0188 9.731 10.0388 9.611L9.18885 8.951C9.10885 8.891 9.08885 8.791 9.13885 8.691L9.93885 7.311C9.98885 7.221 10.0888 7.191 10.1788 7.221L11.1788 7.621C11.3788 7.471 11.6088 7.331 11.8488 7.231L11.9988 6.171C12.0188 6.071 12.0988 6.001 12.1988 6.001H13.7988C13.8988 6.001 13.9788 6.071 13.9988 6.171L14.1488 7.231C14.3888 7.331 14.6088 7.461 14.8188 7.621L15.8188 7.221C15.9088 7.191 16.0188 7.221 16.0588 7.311L16.8588 8.691C16.9088 8.781 16.8888 8.891 16.8088 8.951L15.9588 9.611C15.9888 9.731 15.9988 9.861 15.9988 10.001Z"
-                    fill="#005C9F" />
-                </svg>
-              </span>
-              FÓRMATE EN NUESTRAS ACADEMIAS
-              <span class="chevron" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z"
-                    fill="#005C9F" />
-                </svg>
-              </span>
-            </div>
+                    <path
+                      d="M13.2088 3.001C9.36885 2.891 6.20885 5.871 6.01885 9.641L4.09885 12.201C3.84885 12.531 4.08885 13.001 4.49885 13.001H5.99885V16.001C5.99885 17.101 6.89885 18.001 7.99885 18.001H8.99885V20.001C8.99885 20.551 9.44885 21.001 9.99885 21.001H14.9988C15.5488 21.001 15.9988 20.551 15.9988 20.001V16.321C18.4388 15.161 20.0988 12.641 19.9988 9.741C19.8588 6.121 16.8188 3.111 13.2088 3.001ZM15.9988 10.001C15.9988 10.131 15.9888 10.261 15.9788 10.391L16.8088 11.051C16.8888 11.111 16.9088 11.211 16.8588 11.301L16.0588 12.691C16.0088 12.781 15.8988 12.811 15.8188 12.781L14.8288 12.381C14.6188 12.541 14.3988 12.671 14.1588 12.771L13.9988 13.831C13.9888 13.931 13.8988 14.001 13.7988 14.001H12.1988C12.0988 14.001 12.0188 13.931 11.9988 13.831L11.8488 12.771C11.5988 12.671 11.3788 12.541 11.1688 12.381L10.1788 12.781C10.0888 12.811 9.97885 12.781 9.92885 12.691L9.12885 11.301C9.07885 11.221 9.09885 11.111 9.17885 11.051L10.0188 10.391C10.0088 10.261 9.99885 10.131 9.99885 10.001C9.99885 9.871 10.0188 9.731 10.0388 9.611L9.18885 8.951C9.10885 8.891 9.08885 8.791 9.13885 8.691L9.93885 7.311C9.98885 7.221 10.0888 7.191 10.1788 7.221L11.1788 7.621C11.3788 7.471 11.6088 7.331 11.8488 7.231L11.9988 6.171C12.0188 6.071 12.0988 6.001 12.1988 6.001H13.7988C13.8988 6.001 13.9788 6.071 13.9988 6.171L14.1488 7.231C14.3888 7.331 14.6088 7.461 14.8188 7.621L15.8188 7.221C15.9088 7.191 16.0188 7.221 16.0588 7.311L16.8588 8.691C16.9088 8.781 16.8888 8.891 16.8088 8.951L15.9588 9.611C15.9888 9.731 15.9988 9.861 15.9988 10.001Z"
+                      fill="#005C9F" />
+                  </svg>
+                </span>
+                  AVANZA CON TUS ACADEMIAS
+                <span class="chevron" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z"
+                      fill="#005C9F" />
+                  </svg>
+                </span>
+              </div>
+            </a>
 
             <div class="card-body">
               <div class="subtabs" role="tablist">
-                <button class="subtab" data-target="academia-ia" type="button">Academia IA</button>
-                <button class="subtab active" data-target="academia-datos" type="button">Academia Datos</button>
+                <button class="subtab active" data-target="academia-ia" type="button">Academia IA</button>
+                <button class="subtab" data-target="academia-datos" type="button">Academia Datos</button>
               </div>
 
-              <div class="subtab-panel img" id="academia-ia">
+              <div class="subtab-panel img active" id="academia-ia">
                 <ul class="simple-list z-index">
-                  <li>Itinerarios IA</li>
+                  
+                  <li><a class="no-underline " href="#">Itinerarios IA</a></li>
 
-                  <li>Portal IA</li>
+                  <li><a class="no-underline " href="#">Portal IA</a></li>
 
-                  <li>Playlist Masterclass</li>
+                  <li><a class="no-underline " href="#">Playlist Masterclass</a></li>
 
-                  <li>Playlist TechTalks</li>
+                  <li><a class="no-underline " href="#">Playlist TechTalks</a></li>
 
-                  <li>Playlist Fundamentos programación</li>
+                  <li><a class="no-underline " href="#">Playlist Fundamentos programación</a></li>
                 </ul>
                 <img src="/clientimg/bde/welcome/miespacio1/Luzia.png" alt="Fondo con ilustración de un robot con gafas y una laptop, representando la inteligencia artificial" />
               </div>
 
-              <div class="subtab-panel img active" id="academia-datos">
+              <div class="subtab-panel img" id="academia-datos">
                 <ul class="simple-list z-index">
-                  <li>Itinerarios Datos</li>
+                  <li><a class="no-underline " href="#">Itinerarios Datos</a></li>
 
-                  <li>Portal del Dato</li>
+                  <li><a class="no-underline " href="#">Portal del Dato</a></li>
 
-                  <li>Playlist Excel y Datos</li>
+                  <li><a class="no-underline " href="#">Playlist Excel y Datos</a></li>
 
-                  <li>Playlist Power BI desde cero</li>
+                  <li><a class="no-underline " href="#">Playlist Power BI desde cero</a></li>
 
-                  <li>Playlist Fundamentos SQL</li>
+                  <li><a class="no-underline " href="#">Playlist Fundamentos SQL</a></li>
                 </ul>
                 <img src="/clientimg/bde/welcome/miespacio1/Leo.png" alt="Fondo con ilustración representando el análisis de datos" />
               </div>
@@ -523,23 +531,25 @@
           </article>
 
           <article class="card">
-            <div class="card-header">
-              <span class="card-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M10.92 12.4434L12 11.6234L13.07 12.4334C13.46 12.7234 13.99 12.3534 13.85 11.8834L13.43 10.5234L14.63 9.57336C15 9.29336 14.79 8.69336 14.31 8.69336H12.91L12.48 7.35336C12.33 6.89336 11.68 6.89336 11.53 7.35336L11.09 8.69336H9.68C9.21 8.69336 9 9.29336 9.37 9.58336L10.56 10.5334L10.14 11.8934C10 12.3634 10.53 12.7334 10.92 12.4434ZM6 21.3034C6 21.9834 6.67 22.4634 7.32 22.2534L12 20.6934L16.68 22.2534C17.33 22.4734 18 21.9934 18 21.3034V14.9734C19.24 13.5634 20 11.7234 20 9.69336C20 5.27336 16.42 1.69336 12 1.69336C7.58 1.69336 4 5.27336 4 9.69336C4 11.7234 4.76 13.5634 6 14.9734V21.3034ZM12 3.69336C15.31 3.69336 18 6.38336 18 9.69336C18 13.0034 15.31 15.6934 12 15.6934C8.69 15.6934 6 13.0034 6 9.69336C6 6.38336 8.69 3.69336 12 3.69336Z"
-                    fill="#005C9F" />
-                </svg>
-              </span>
-              AVANZA EN TUS COMPETENCIAS
-              <span class="chevron" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z"
-                    fill="#005C9F" />
-                </svg>
-              </span>
-            </div>
+            <a class="no-underline " href="#">
+              <div class="card-header">
+                <span class="card-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M10.92 12.4434L12 11.6234L13.07 12.4334C13.46 12.7234 13.99 12.3534 13.85 11.8834L13.43 10.5234L14.63 9.57336C15 9.29336 14.79 8.69336 14.31 8.69336H12.91L12.48 7.35336C12.33 6.89336 11.68 6.89336 11.53 7.35336L11.09 8.69336H9.68C9.21 8.69336 9 9.29336 9.37 9.58336L10.56 10.5334L10.14 11.8934C10 12.3634 10.53 12.7334 10.92 12.4434ZM6 21.3034C6 21.9834 6.67 22.4634 7.32 22.2534L12 20.6934L16.68 22.2534C17.33 22.4734 18 21.9934 18 21.3034V14.9734C19.24 13.5634 20 11.7234 20 9.69336C20 5.27336 16.42 1.69336 12 1.69336C7.58 1.69336 4 5.27336 4 9.69336C4 11.7234 4.76 13.5634 6 14.9734V21.3034ZM12 3.69336C15.31 3.69336 18 6.38336 18 9.69336C18 13.0034 15.31 15.6934 12 15.6934C8.69 15.6934 6 13.0034 6 9.69336C6 6.38336 8.69 3.69336 12 3.69336Z"
+                      fill="#005C9F" />
+                  </svg>
+                </span>
+                AVANZA EN TUS COMPETENCIAS
+                <span class="chevron" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z"
+                      fill="#005C9F" />
+                  </svg>
+                </span>
+              </div>
+            </a>
 
             <div class="card-body">
               <div class="subtabs" role="tablist">
@@ -551,29 +561,29 @@
 
               <div class="subtab-panel active" id="competencias-agilidad">
                 <ul class="simple-list ">
-                  <li>Itinerario o evento 1</li>
+                  <li><a class="no-underline " href="#">Itinerario o evento 1</a></li>
 
-                  <li>Itinerario o evento 2</li>
+                  <li><a class="no-underline " href="#">Itinerario o evento 2</a></li>
 
-                  <li>Rincón Agilidad</li>
+                  <li><a class="no-underline " href="#">Rincón Agilidad</a></li>
 
-                  <li>Playlist 1</li>
+                  <li><a class="no-underline " href="#">Playlist 1</a></li>
 
-                  <li>Playlist 2</li>
+                  <li><a class="no-underline " href="#"></a>Playlist 2</a></li>
                 </ul>
               </div>
 
               <div class="subtab-panel" id="competencias-liderazgo">
                 <ul class="simple-list">
-                  <li>Programa FOCUS</li>
+                  <li><a class="no-underline " href="#">Programa FOCUS</a></li>
 
-                  <li>Itinerario o evento 1</li>
+                  <li><a class="no-underline " href="#">Itinerario o evento 1</a></li>
 
-                  <li>Itinerario o evento 2</li>
+                  <li><a class="no-underline " href="#">Itinerario o evento 2</a></li>
 
-                  <li>Playlist 1</li>
+                  <li><a class="no-underline " href="#">Playlist 1</a></li>
 
-                  <li>Playlist 2</li>
+                  <li><a class="no-underline " href="#">Playlist 2</a></li>
                 </ul>
               </div>
             </div>
@@ -582,51 +592,55 @@
 
         <div class="explore-grid three-col" style="margin-top: 16px">
           <article class="card">
-            <div class="card-header">
-              <span class="card-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M9.19002 6.34976C7.15002 8.63976 5.75002 11.9298 5.62002 12.2398L3.36002 11.2698C2.71002 10.9898 2.55002 10.1398 3.05002 9.63976L6.06002 6.62976C6.53002 6.15976 7.21002 5.94976 7.87002 6.07976L9.19002 6.34976ZM10.68 16.5098C10.98 16.8098 11.42 16.8898 11.8 16.7098C12.96 16.1698 15.45 14.8998 17.06 13.2898C21.65 8.69976 21.69 4.95976 21.42 3.35976C21.3845 3.16328 21.2898 2.98234 21.1486 2.84116C21.0074 2.69998 20.8265 2.60529 20.63 2.56976C19.03 2.29976 15.29 2.33976 10.7 6.92976C9.09002 8.53976 7.83002 11.0298 7.28002 12.1898C7.10002 12.5698 7.19002 13.0198 7.48002 13.3098L10.68 16.5098ZM17.65 14.8098C15.36 16.8498 12.07 18.2498 11.76 18.3798L12.73 20.6398C13.01 21.2898 13.86 21.4498 14.36 20.9498L17.37 17.9398C17.84 17.4698 18.05 16.7898 17.92 16.1298L17.65 14.8098ZM8.94002 17.4098C9.03699 17.8941 9.01288 18.3948 8.86983 18.8676C8.72678 19.3403 8.46922 19.7705 8.12002 20.1198C7.35002 20.8898 4.96002 21.4598 3.41002 21.7598C2.72002 21.8898 2.11002 21.2798 2.24002 20.5898C2.54002 19.0398 3.10002 16.6498 3.88002 15.8798C4.22932 15.5306 4.65944 15.273 5.13219 15.1299C5.60495 14.9869 6.10571 14.9628 6.59002 15.0598C7.76002 15.2798 8.72002 16.2398 8.94002 17.4098ZM13 8.99976C13 7.89976 13.9 6.99976 15 6.99976C16.1 6.99976 17 7.89976 17 8.99976C17 10.0998 16.1 10.9998 15 10.9998C13.9 10.9998 13 10.0998 13 8.99976Z"
-                    fill="#005C9F" />
-                </svg>
-              </span>
-              AVANZA EN TUS PRIMEROS PASOS
-              <span class="chevron" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z"
-                    fill="#005C9F" />
-                </svg>
-              </span>
-            </div>
+            <a class="no-underline " href="#">
+              <div class="card-header">
+                <span class="card-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M9.19002 6.34976C7.15002 8.63976 5.75002 11.9298 5.62002 12.2398L3.36002 11.2698C2.71002 10.9898 2.55002 10.1398 3.05002 9.63976L6.06002 6.62976C6.53002 6.15976 7.21002 5.94976 7.87002 6.07976L9.19002 6.34976ZM10.68 16.5098C10.98 16.8098 11.42 16.8898 11.8 16.7098C12.96 16.1698 15.45 14.8998 17.06 13.2898C21.65 8.69976 21.69 4.95976 21.42 3.35976C21.3845 3.16328 21.2898 2.98234 21.1486 2.84116C21.0074 2.69998 20.8265 2.60529 20.63 2.56976C19.03 2.29976 15.29 2.33976 10.7 6.92976C9.09002 8.53976 7.83002 11.0298 7.28002 12.1898C7.10002 12.5698 7.19002 13.0198 7.48002 13.3098L10.68 16.5098ZM17.65 14.8098C15.36 16.8498 12.07 18.2498 11.76 18.3798L12.73 20.6398C13.01 21.2898 13.86 21.4498 14.36 20.9498L17.37 17.9398C17.84 17.4698 18.05 16.7898 17.92 16.1298L17.65 14.8098ZM8.94002 17.4098C9.03699 17.8941 9.01288 18.3948 8.86983 18.8676C8.72678 19.3403 8.46922 19.7705 8.12002 20.1198C7.35002 20.8898 4.96002 21.4598 3.41002 21.7598C2.72002 21.8898 2.11002 21.2798 2.24002 20.5898C2.54002 19.0398 3.10002 16.6498 3.88002 15.8798C4.22932 15.5306 4.65944 15.273 5.13219 15.1299C5.60495 14.9869 6.10571 14.9628 6.59002 15.0598C7.76002 15.2798 8.72002 16.2398 8.94002 17.4098ZM13 8.99976C13 7.89976 13.9 6.99976 15 6.99976C16.1 6.99976 17 7.89976 17 8.99976C17 10.0998 16.1 10.9998 15 10.9998C13.9 10.9998 13 10.0998 13 8.99976Z"
+                      fill="#005C9F" />
+                  </svg>
+                </span>
+                AVANZA EN TUS PRIMEROS PASOS
+                <span class="chevron" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z"
+                      fill="#005C9F" />
+                  </svg>
+                </span>
+              </div>
+            </a>  
 
             <div class="card-body">
               <ul class="simple-list">
-                <li>Acceso Comunidades promoción vertical</li>
+                <li><a class="no-underline " href="#">Acceso Comunidades promoción vertical</a></li>
 
-                <li>Itinerario Onboarding Comunidad IT</li>
+                <li><a class="no-underline " href="#">Itinerario Onboarding Comunidad IT</a></li>
               </ul>
             </div>
           </article>
 
           <article class="card">
-            <div class="card-header">
-              <span class="card-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M17.5049 3.67773C15.5549 3.67773 13.4549 4.07773 12.0049 5.17773C10.5549 4.07773 8.45488 3.67773 6.50488 3.67773C5.05488 3.67773 3.51488 3.89773 2.22488 4.46773C1.49488 4.79773 1.00488 5.50773 1.00488 6.31773V17.5977C1.00488 18.8977 2.22488 19.8577 3.48488 19.5377C4.46488 19.2877 5.50488 19.1777 6.50488 19.1777C8.06488 19.1777 9.72488 19.4377 11.0649 20.0977C11.6649 20.3977 12.3449 20.3977 12.9349 20.0977C14.2749 19.4277 15.9349 19.1777 17.4949 19.1777C18.4949 19.1777 19.5349 19.2877 20.5149 19.5377C21.7749 19.8677 22.9949 18.9077 22.9949 17.5977V6.31773C22.9949 5.50773 22.5049 4.79773 21.7749 4.46773C20.4949 3.89773 18.9549 3.67773 17.5049 3.67773ZM21.0049 16.4077C21.0049 17.0377 20.4249 17.4977 19.8049 17.3877C19.0549 17.2477 18.2749 17.1877 17.5049 17.1877C15.8049 17.1877 13.3549 17.8377 12.0049 18.6877V7.17773C13.3549 6.32773 15.8049 5.67773 17.5049 5.67773C18.4249 5.67773 19.3349 5.76773 20.2049 5.95773C20.6649 6.05773 21.0049 6.46773 21.0049 6.93773V16.4077Z"
-                    fill="#005C9F" />
-                </svg>
-              </span>
-              AVANZA EN TU CONOCIMIENTO Y ESPECIALIZACIÓN
-              <span class="chevron" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z"
-                    fill="#005C9F" />
-                </svg>
-              </span>
-            </div>
+            <a class="no-underline " href="#">
+              <div class="card-header">
+                <span class="card-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M17.5049 3.67773C15.5549 3.67773 13.4549 4.07773 12.0049 5.17773C10.5549 4.07773 8.45488 3.67773 6.50488 3.67773C5.05488 3.67773 3.51488 3.89773 2.22488 4.46773C1.49488 4.79773 1.00488 5.50773 1.00488 6.31773V17.5977C1.00488 18.8977 2.22488 19.8577 3.48488 19.5377C4.46488 19.2877 5.50488 19.1777 6.50488 19.1777C8.06488 19.1777 9.72488 19.4377 11.0649 20.0977C11.6649 20.3977 12.3449 20.3977 12.9349 20.0977C14.2749 19.4277 15.9349 19.1777 17.4949 19.1777C18.4949 19.1777 19.5349 19.2877 20.5149 19.5377C21.7749 19.8677 22.9949 18.9077 22.9949 17.5977V6.31773C22.9949 5.50773 22.5049 4.79773 21.7749 4.46773C20.4949 3.89773 18.9549 3.67773 17.5049 3.67773ZM21.0049 16.4077C21.0049 17.0377 20.4249 17.4977 19.8049 17.3877C19.0549 17.2477 18.2749 17.1877 17.5049 17.1877C15.8049 17.1877 13.3549 17.8377 12.0049 18.6877V7.17773C13.3549 6.32773 15.8049 5.67773 17.5049 5.67773C18.4249 5.67773 19.3349 5.76773 20.2049 5.95773C20.6649 6.05773 21.0049 6.46773 21.0049 6.93773V16.4077Z"
+                      fill="#005C9F" />
+                  </svg>
+                </span>
+                AVANZA EN TU CONOCIMIENTO Y ESPECIALIZACIÓN
+                <span class="chevron" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z"
+                      fill="#005C9F" />
+                  </svg>
+                </span>
+              </div>
+            </a>
 
             <div class="card-body">
               <div class="subtabs" role="tablist">
@@ -639,54 +653,56 @@
 
               <div class="subtab-panel active" id="especializacion-itinerarios">
                 <ul class="simple-list">
-                  <li>Supervisión, Regulación y Riesgos Financieros</li>
+                  <li><a class="no-underline " href="#">Supervisión, Regulación y Riesgos Financieros</a></li>
 
-                  <li>Economía, Mercados y Análisis Cuantitativo</li>
+                  <li><a class="no-underline " href="#">Economía, Mercados y Análisis Cuantitativo</a></li>
 
-                  <li>Gestión Organizativa, Personas y Sistemas</li>
+                  <li><a class="no-underline " href="#">Gestión Organizativa, Personas y Sistemas</a></li>
 
-                  <li>Marco Institucional, Normativo y de Sostenibilidad</li>
+                  <li><a class="no-underline " href="#">Marco Institucional, Normativo y de Sostenibilidad</a></li>
                 </ul>
               </div>
 
               <div class="subtab-panel" id="especializacion-catalogo">
                 <ul class="simple-list">
-                  <li>Lista de cursos</li>
+                  <li><a class="no-underline " href="#">Lista de cursos</a></li>
 
-                  <li>Solicitud</li>
+                  <li><a class="no-underline " href="#">Solicitud</a></li>
 
-                  <li>Eureka</li>
+                  <li><a class="no-underline " href="#">Eureka</a></li>
                 </ul>
               </div>
 
               <div class="subtab-panel" id="especializacion-playlists">
                 <ul class="simple-list">
-                  <li>Playlist 1</li>
+                  <li><a class="no-underline " href="#">Playlist 1</a></li>
 
-                  <li>Playlist 2</li>
+                  <li><a class="no-underline " href="#">Playlist 2</a></li>
                 </ul>
               </div>
             </div>
           </article>
 
           <article class="card">
-            <div class="card-header">
-              <span class="card-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z"
-                    fill="#005C9F" />
-                </svg>
-              </span>
-              AVANZA SIN FRONTERAS
-              <span class="chevron" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z"
-                    fill="#005C9F" />
-                </svg>
-              </span>
-            </div>
+            <a class="no-underline " href="#">
+              <div class="card-header">
+                <span class="card-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z"
+                      fill="#005C9F" />
+                  </svg>
+                </span>
+                AVANZA SIN FRONTERAS
+                <span class="chevron" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z"
+                      fill="#005C9F" />
+                  </svg>
+                </span>
+              </div>
+            </a>
 
             <div class="card-body">
               <div class="subtabs" role="tablist">
@@ -697,27 +713,27 @@
 
               <div class="subtab-panel active" id="fronteras-servicios">
                 <ul class="simple-list">
-                  <li>Programa próximamente</li>
+                  <li><a class="no-underline " href="#">Programa próximamente</a></li>
 
-                  <li>Cursos de verano</li>
+                  <li><a class="no-underline " href="#">Cursos de verano</a></li>
 
-                  <li>Curso intensivo</li>
+                  <li><a class="no-underline " href="#">Curso intensivo</a></li>
                 </ul>
               </div>
 
               <div class="subtab-panel " id="fronteras-sucursales">
                 <ul class="simple-list">
-                  <li>Guía procedimiento de reembolso</li>
+                  <li><a class="no-underline " href="#">Guía procedimiento de reembolso</a></li>
 
-                  <li>Programa próximamente</li>
+                  <li><a class="no-underline " href="#">Programa próximamente</a></li>
                 </ul>
               </div>
 
               <div class="subtab-panel" id="fronteras-playlists">
                 <ul class="simple-list">
-                  <li>Playlist 1</li>
+                  <li><a class="no-underline " href="#">Playlist 1</a></li>
 
-                  <li>Playlist 2</li>
+                  <li><a class="no-underline " href="#">Playlist 2</a></li>
                 </ul>
               </div>
             </div>
@@ -725,7 +741,7 @@
         </div>
       </section>
 
-      <section id="view-formacion" class="view active">
+      <section id="view-formacion" class="view">
         <section class="grid">
           <!-- Enlaces de interés -->
           <article class="card">
@@ -799,10 +815,12 @@
 
               <div class="card-body">
                 <div class="progress-item">
+                  <a class="no-underline " href="#">
                   <span>Formación asignada u obligatoria</span> <span id="totalWidget37" class="badge"></span>
+                  </a>
                 </div>
 
-                <div class="progress-item"><span>Formación en progreso</span> <span id="totalWidget3" class="badge"></span></div>
+                <div class="progress-item"><a class="no-underline " href="#"><span>Formación en progreso</span> <span id="totalWidget3" class="badge"></span></a></div>
               </div>
             </article>
 
@@ -873,7 +891,7 @@
             <div class="col">
               <div class="subtitle">Interlocutores</div>
 
-              <div class="link"><a href="#">Guía para solicitar nueva formación</a></div>
+              <div class="link"><a href="#"><span>Guía para solicitar nueva formación</span></a></div>
 
               <ul class="link-list">
                 <li>
@@ -933,7 +951,7 @@
         }
       };
       const initialTabParam = new URLSearchParams(window.location.search).get('tab');
-      setActiveView(tabParamToView(initialTabParam), false);
+      setActiveView(tabParamToView(initialTabParam || '1'), false);
       viewTabs.forEach(tab => {
         tab.addEventListener('click', e => {
           e.preventDefault();
