@@ -18,12 +18,24 @@
         --bg: #f7f7f7;
         --card: #ffffff;
         --text: #1f2937;
+        --text-dark: #111827;
+        --text-strong: #161616;
+        --text-muted: #616161;
+        --text-black: #0a0a0a;
         --muted: #6b7280;
         --primary: #005c9f;
         --primary-2: #2c6ea3;
         --border: #d6dde5;
+        --border-light: #e5e7eb;
+        --border-muted: #b3b3b3;
+        --border-strong: #787777;
+        --border-faint: #dadada;
         --soft: #e6eeff;
-        --accent: #f6c94a;
+        --soft-alt: #e6eef6;
+        --soft-alpha: #e6eeff80;
+        --alert-bg: #f8bb00;
+        --alert-text: #000000;
+        --badge-text: #1f4d74;
         --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
         --radius: 8px;
       }
@@ -43,8 +55,8 @@
         color: var(--text);
       }
       .topbar {
-        background: #fff;
-        border-bottom: 1px solid var(#b3b3b3);
+        background: var(--card);
+        border-bottom: 1px solid var(--border-muted);
         padding: 10px 18px 0;
         position: sticky;
         top: 0;
@@ -56,18 +68,18 @@
         gap: 24px;
         cursor: pointer;
         padding: 6px 6px 0;
-        border-bottom: 2px solid #e5e7eb;
+        border-bottom: 2px solid var(--border-light);
       }
       .tab {
         padding: 10px 8px 12px;
         font-size: 14px;
-        color: #616161;
+        color: var(--text-muted);
         text-decoration: none;
         position: relative;
         font-weight: 400;
       }
       .tab-contact {
-        color: #005c9f;
+        color: var(--primary);
         text-decoration: underline;
         font-weight: 600;
       }
@@ -75,14 +87,14 @@
         display: inline-flex;
         align-items: center;
         margin-left: 6px;
-        color: #6b7280;
+        color: var(--muted);
       }
       .external-icon svg {
         width: 12px;
         height: 12px;
       }
       .tab.active {
-        color: #111827;
+        color: var(--text-dark);
         font-weight: bold;
       }
       .tab.active::after {
@@ -96,8 +108,8 @@
       }
       .topbar .alert {
         margin-left: auto;
-        background: #f8bb00;
-        color: #000000;
+        background: var(--alert-bg);
+        color: var(--alert-text);
         padding: 4px 16px 4px 16px;
         border-radius: 5px;
         font-size: 16px;
@@ -110,7 +122,7 @@
       .topbar .alert svg {
         width: 12px;
         height: 12px;
-        color: #111827;
+        color: var(--text-dark);
       }
       .container {
         margin: 18px auto 40px;
@@ -135,7 +147,7 @@
         align-items: center;
         gap: 8px;
         font-weight: bold;
-        color: #005c9f;
+        color: var(--primary);
         font-size: 13px;
         text-transform: uppercase;
       }
@@ -143,7 +155,7 @@
         width: 22px;
         height: 22px;
         border-radius: 4px;
-        color: #005c9f;
+        color: var(--primary);
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -169,14 +181,14 @@
         gap: 6px;
       }
       .link {
-        color: #005c9f;
+        color: var(--primary);
         text-decoration: underline;
         margin: 12px 0px 12px 0px;
         font-size: 14px;
         font-weight: 500;
       }
       .link-list a {
-        color: #005c9f;
+        color: var(--primary);
         text-decoration: underline;
         font-size: 14px;
       }
@@ -192,13 +204,13 @@
         flex: 0 0 auto;
       }
       .divider {
-        border-top: 0.5px solid #005c9f;
+        border-top: 0.5px solid var(--primary);
         margin: 10px 0;
       }
       .btn-outline {
-        border: 1px solid #005c9f;
-        background: #fff;
-        color: #005c9f;
+        border: 1px solid var(--primary);
+        background: var(--card);
+        color: var(--primary);
         font-size: 12px;
         padding: 6px 10px;
         border-radius: 2px;
@@ -206,8 +218,8 @@
         font-weight: 600;
       }
       .badge {
-        background: #e6eef6;
-        color: #1f4d74;
+        background: var(--soft-alt);
+        color: var(--badge-text);
         width: 20px;
         height: 20px;
         display: inline-flex;
@@ -221,12 +233,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: #e6eeff80;
+        background: var(--soft-alpha);
         padding: 10px 12px;
         border-radius: 6px;
         margin-bottom: 8px;
         font-size: 13px;
-        color: #161616;
+        color: var(--text-strong);
         font-weight: bold;
       }
       .faq-accordion {
@@ -236,7 +248,7 @@
       }
       .faq-item {
         border-radius: 6px;
-        background: #fff;
+        background: var(--card);
         overflow: hidden;
       }
       .faq-trigger {
@@ -250,14 +262,14 @@
         padding: 10px 12px;
         font-size: 16px;
         font-weight: bold;
-        color: #0A0A0A;
+        color: var(--text-black);
         text-align: left;
         cursor: pointer;
       }
       .faq-chevron {
         display: inline-flex;
         align-items: center;
-        color: #005c9f;
+        color: var(--primary);
         transition: transform 0.2s ease;
       }
       .faq-chevron svg {
@@ -268,7 +280,7 @@
         display: none;
         padding: 0 12px 12px;
         font-size: 14px;
-        color: #616161;
+        color: var(--text-muted);
         line-height: 1.4;
       }
       .faq-item.active .faq-content {
@@ -295,9 +307,9 @@
         font-size: 11px;
         padding: 6px 10px;
         border-radius: 2px;
-        border: 1px solid #005c9f;
-        background: #fff;
-        color: #005c9f;
+        border: 1px solid var(--primary);
+        background: var(--card);
+        color: var(--primary);
         font-weight: 700;
         cursor: pointer;
       }
@@ -311,7 +323,7 @@
         padding-top: 8px;
       }
       .split .col {
-        border-right: 1px solid #787777;
+        border-right: 1px solid var(--border-strong);
         padding-right: 12px;
         padding-top: 12px;
       }
@@ -322,10 +334,10 @@
       .subtitle {
         font-size: 11px;
         font-weight: 700;
-        color: #005c9f;
+        color: var(--primary);
         text-transform: uppercase;
         margin-bottom: 6px;
-        background-color: #e6eeff;
+        background-color: var(--soft);
         padding: 4px 11px 4px 12px;
         border-radius: 16px;
         width: fit-content;
@@ -348,7 +360,7 @@
       }
       .card-header .chevron {
         margin-left: auto;
-        color: #005c9f;
+        color: var(--primary);
       }
       .subtabs {
         display: flex;
@@ -366,11 +378,11 @@
         padding: 4px 16px 4px 16px;
         font-size: 16px;
         font-weight: 400;
-        color: #616161;
+        color: var(--text-muted);
         cursor: pointer;
       }
       .subtab.active {
-        color: #161616;
+        color: var(--text-strong);
         font-weight: bold;
         border-bottom: 2px solid var(--primary);
         margin-bottom: -1px;
@@ -390,12 +402,12 @@
         display: grid;
         gap: 10px;
         font-size: 16px;
-        color: #616161;
+        color: var(--text-muted);
         font-weight: bold;
       }
       .simple-list li {
         padding-bottom: 15px;
-        border-bottom: 1px solid #dadada;
+        border-bottom: 1px solid var(--border-faint);
       }
       .simple-list li:last-child {
         border-bottom: none;
