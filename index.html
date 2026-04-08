@@ -6,14 +6,14 @@
 		<title>Cornstone - Mi formación</title>
 		<style>
     :root {
-      --bg: #f3f5f7;
+      --bg: #F7F7F7;
       --card: #ffffff;
       --text: #1f2937;
       --muted: #6b7280;
-      --primary: #1e5f91;
+      --primary: #005C9F;
       --primary-2: #2c6ea3;
       --border: #d6dde5;
-      --soft: #eef3f9;
+      --soft: #E6EEFF;
       --accent: #f6c94a;
       --shadow: 0 2px 10px rgba(0,0,0,0.08);
       --radius: 8px;
@@ -47,13 +47,14 @@
     .tab {
       padding: 10px 8px 12px;
       font-size: 14px;
-      color: #4b5563;
+      color: #616161;
       text-decoration: none;
       position: relative;
+      font-weight: 400;
     }
 
     .tab-contact {
-      color: #1e5f91;
+      color: #005C9F;
       text-decoration: underline;
       font-weight: 600;
     }
@@ -72,7 +73,7 @@
 
     .tab.active {
       color: #111827;
-      font-weight: 600;
+      font-weight: bold;
     }
 
     .tab.active::after {
@@ -127,14 +128,13 @@
 
     .card-header {
       background: var(--soft);
-      border: 1px solid #d8e2ee;
       border-radius: 6px;
       padding: 8px 10px;
       display: flex;
       align-items: center;
       gap: 8px;
-      font-weight: 600;
-      color: #1f4d74;
+      font-weight: bold;
+      color: #005C9F;
       font-size: 13px;
       text-transform: uppercase;
     }
@@ -143,9 +143,7 @@
       width: 22px;
       height: 22px;
       border-radius: 4px;
-      background: #dbeafe;
-      border: 1px solid #bfdbfe;
-      color: #1e5f91;
+      color: #005C9F;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -153,16 +151,16 @@
     }
 
     .card-icon svg {
-      width: 14px;
-      height: 14px;
+      width: 21px;
+      height: 21px;
     }
 
     .card-body { padding: 10px 6px 6px; }
 
     .section-title {
-      font-size: 13px;
+      font-size: 16px;
       font-weight: 700;
-      margin: 10px 0 6px;
+      margin: 10px 0 8px;
     }
 
     .link-list {
@@ -174,9 +172,9 @@
     }
 
     .link-list a {
-      color: #1f4d74;
+      color: #005C9F;
       text-decoration: underline;
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .link-with-icon {
@@ -195,9 +193,9 @@
     .divider { border-top: 1px solid var(--border); margin: 10px 0; }
 
     .btn-outline {
-      border: 1px solid #8aa8c0;
+      border: 1px solid #005C9F;
       background: #fff;
-      color: #1f4d74;
+      color: #005C9F;
       font-size: 12px;
       padding: 6px 10px;
       border-radius: 2px;
@@ -222,13 +220,13 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: #f7fbff;
-      border: 1px solid #e2e8f0;
+      background: #E6EEFF80;
       padding: 10px 12px;
       border-radius: 6px;
       margin-bottom: 8px;
       font-size: 13px;
-      font-weight: 600;
+      color: #161616;
+      font-weight: bold;
     }
 
     .faq-list {
@@ -250,9 +248,9 @@
       font-size: 11px;
       padding: 6px 10px;
       border-radius: 2px;
-      border: 1px solid #8aa8c0;
+      border: 1px solid #005C9F;
       background: #fff;
-      color: #1f4d74;
+      color: #005C9F;
       font-weight: 700;
       cursor: pointer;
     }
@@ -281,9 +279,13 @@
     .subtitle {
       font-size: 11px;
       font-weight: 700;
-      color: #2c6ea3;
+      color: #005C9F;
       text-transform: uppercase;
       margin-bottom: 6px;
+      background-color: #E6EEFF;
+      padding: 4px 11px 4px 12px;
+      border-radius: 16px;
+      width: fit-content;
     }
 
     .view { display: none; }
@@ -304,7 +306,7 @@
 
     .card-header .chevron {
       margin-left: auto;
-      color: #1e5f91;
+      color: #005C9F;
     }
 
     .subtabs {
