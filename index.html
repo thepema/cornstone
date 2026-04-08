@@ -54,6 +54,7 @@
         display: flex;
         align-items: center;
         gap: 24px;
+        cursor: pointer;
         padding: 6px 6px 0;
         border-bottom: 2px solid #e5e7eb;
       }
@@ -427,10 +428,10 @@
   </head>
 
   <body>
-    <header class="topbar">
+    <div class="topbar">
       <nav class="tabs">
-        <a class="tab" href="#" data-view="explora">Explora</a>
-        <a class="tab active" href="#" data-view="formacion">Mi formación</a>
+        <a class="tab active" data-view="explora">Explora</a>
+        <a class="tab" data-view="formacion">Mi formación</a>
         <a class="tab" href="#">
           Calendario
           <span class="external-icon" aria-hidden="true">
@@ -443,7 +444,7 @@
         </a>
         <a class="tab tab-contact" href="#">Contacto</a> <span class="alert">¡No te pierdas las novedades!</span>
       </nav>
-    </header>
+    </div>
 
     <main class="container">
       <section id="view-explora" class="view">
@@ -786,10 +787,10 @@
 
               <div class="card-body">
                 <div class="progress-item">
-                  <span>Formación asignada u obligatoria</span> <span class="badge">2</span>
+                  <span>Formación asignada u obligatoria</span> <span id="totalWidget37" class="badge"></span>
                 </div>
 
-                <div class="progress-item"><span>Formación en progreso</span> <span class="badge">2</span></div>
+                <div class="progress-item"><span>Formación en progreso</span> <span id="totalWidget3" class="badge"></span></div>
               </div>
             </article>
 
@@ -897,16 +898,17 @@
           </div>
         </section>
       </section>
+      
     </main>
     <script>
       const viewTabs = document.querySelectorAll('.tab[data-view]');
       const views = document.querySelectorAll('.view');
       const tabParamToView = value => {
-        if (value === '2') return 'explora';
-        if (value === '1') return 'formacion';
+        if (value === '1') return 'explora';
+        if (value === '2') return 'formacion';
         return 'formacion';
       };
-      const viewToTabParam = viewId => (viewId === 'explora' ? '2' : '1');
+      const viewToTabParam = viewId => (viewId === 'explora' ? '1' : '2');
       const setActiveView = (viewId, updateUrl) => {
         viewTabs.forEach(t => t.classList.toggle('active', t.dataset.view === viewId));
         views.forEach(view => {
@@ -954,6 +956,68 @@
           });
         });
       });
+
+      
+    var total = 0;
+
+    
+    document.addEventListener('DOMContentLoaded', function () {
+    const ids = [
+      'requiredCount',
+      'pastdueCount',
+      'duesoonCount',
+      'assignedCount'
+    ];
+
+    let total = 0;
+
+    ids.forEach(id => {
+      const th = document.getElementById(id);
+      if (!th) return;
+
+      const link = th.querySelector('a');
+      if (!link) return;
+
+      const value = parseInt(link.textContent.trim(), 10);
+      if (!isNaN(value)) {
+        total += value;
+      }
+    });
+
+    // Sustituir el contenido del apartado total
+    const totalWidget = document.getElementById('totalWidget37');
+    if (totalWidget) {
+      totalWidget.textContent = total;
+    }
+
+    
+  
+  var widget = document.querySelector('.widgetDropped[widgetid="3"]');
+  let totalRows = 0;
+
+  const totalWidget3 = document.getElementById('totalWidget3');
+
+  if (widget) {
+      var panelContentMiddle = widget.querySelector('.Panel_contentMiddle');
+
+      if (panelContentMiddle) {
+
+          // Comprobar si existe el mensaje de lista vacía
+          var lblNoItems = panelContentMiddle.querySelector("span[id$='lblNoItems']");
+
+          // Si NO existe el mensaje, contamos filas reales
+          if (!lblNoItems) {
+              totalRows = panelContentMiddle.querySelectorAll('tr.previewRow').length;
+          }
+      }
+  }
+
+  if (totalWidget3) {
+      totalWidget3.textContent = totalRows;
+  }
+
+});
+
     </script>
   </body>
 </html>
