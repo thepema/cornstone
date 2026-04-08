@@ -929,7 +929,8 @@
           </div>
         </section>
       </section>
-      
+    
+
     </main>
     <script>
       const viewTabs = document.querySelectorAll('.tab[data-view]');
@@ -1029,7 +1030,7 @@
   const totalWidget3 = document.getElementById('totalWidget3');
 
   if (widget) {
-      var panelContentMiddle = widget.querySelector('.Panel_contentMiddle');
+    var panelContentMiddle = widget.querySelector('.Panel_contentMiddle');
 
       if (panelContentMiddle) {
 
@@ -1038,7 +1039,7 @@
 
           // Si NO existe el mensaje, contamos filas reales
           if (!lblNoItems) {
-              totalRows = panelContentMiddle.querySelectorAll('tr.previewRow').length;
+              totalRows = panelContentMiddle.querySelector('table').querySelector('tbody').querySelectorAll('tr').length - 1;
           }
       }
   }
