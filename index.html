@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cornstone - Mi formación</title>
-  <style>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>Cornstone - Mi formación</title>
+		<style>
     :root {
       --bg: #f3f5f7;
       --card: #ffffff;
       --text: #1f2937;
       --muted: #6b7280;
-      --primary: #005C9F;
+      --primary: #1e5f91;
       --primary-2: #2c6ea3;
       --border: #d6dde5;
-      --soft: #E6EEFF;
+      --soft: #eef3f9;
       --accent: #f6c94a;
       --shadow: 0 2px 10px rgba(0,0,0,0.08);
       --radius: 8px;
@@ -106,22 +106,6 @@
       color: #111827;
     }
 
-    .badge-novedades {
-      margin-left: auto;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 3px 8px;
-      font-size: 12.5px;
-      line-height: 1.15;
-      font-weight: 700;
-      color: #111;
-      background: #F4C043;
-      border-radius: 6px;
-      letter-spacing: .1px;
-      white-space: nowrap;
-    }
-
     .container {
       max-width: 1150px;
       margin: 18px auto 40px;
@@ -162,7 +146,7 @@
       border-radius: 4px;
       background: #dbeafe;
       border: 1px solid #bfdbfe;
-      color: #005C9F;
+      color: #1e5f91;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -191,7 +175,7 @@
     }
 
     .link-list a {
-      color: #005C9F;
+      color: #1f4d74;
       text-decoration: underline;
       font-size: 13px;
     }
@@ -224,7 +208,7 @@
 
     .badge {
       background: #e6eef6;
-      color: #005C9F;
+      color: #1f4d74;
       width: 20px;
       height: 20px;
       display: inline-flex;
@@ -258,8 +242,8 @@
 
     .faq-list li {
       font-size: 13px;
-      font-weight: 700;
-      color: #0A0A0A;
+      font-weight: 600;
+      color: #1f2937;
     }
 
     .btn-small {
@@ -269,7 +253,7 @@
       border-radius: 2px;
       border: 1px solid #8aa8c0;
       background: #fff;
-      color: #005C9F;
+      color: #1f4d74;
       font-weight: 700;
       cursor: pointer;
     }
@@ -321,7 +305,7 @@
 
     .card-header .chevron {
       margin-left: auto;
-      color: #005C9F;
+      color: #1e5f91;
     }
 
     .subtabs {
@@ -339,13 +323,6 @@
       font-weight: 700;
       color: #6b7280;
       cursor: pointer;
-    }
-
-    .subtabs .subtab-link {
-      display: block;
-      width: 100%;
-      color: inherit;
-      text-decoration: none;
     }
 
     .subtab.active {
@@ -370,7 +347,7 @@
       display: grid;
       gap: 10px;
       font-size: 13px;
-      color: #616161;
+      color: #374151;
     }
 
     .simple-list li {
@@ -392,253 +369,339 @@
       .topbar .alert { display: none; }
     }
   </style>
-</head>
-<body>
-  <header class="topbar">
-    <nav class="tabs">
-      <a class="tab" href="#" data-view="explora">Explora</a>
-      <a class="tab active" href="#" data-view="formacion">Mi formación</a>
-      <a class="tab" href="#">Calendario <span class="external-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M10 7h7v7"/></svg></span></a>
-      <a class="tab tab-contact" href="#">Contacto</a>
-      <span class="badge-novedades">¡No te pierdas las novedades!</span>
-    </nav>
-  </header>
-
-  <main class="container">
-    <section id="view-explora" class="view">
-      <div class="explore-grid two-col">
-        <article class="card">
-          <div class="card-header">
-            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7h8"/><path d="M4 7h4"/><path d="M4 17h4"/><path d="M12 17h8"/><circle cx="9" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></span>
+	</head>
+	<body>
+		<header class="topbar">
+			<nav class="tabs">
+				<a class="tab" href="#" data-view="explora">Explora</a>
+				<a class="tab active" href="#" data-view="formacion">Mi formación</a>
+				<a class="tab" href="#">Calendario <span class="external-icon" aria-hidden="true">
+						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.6667 12.6667H3.33333V3.33333H8V2H3.33333C2.59333 2 2 2.6 2 3.33333V12.6667C2 13.4 2.59333 14 3.33333 14H12.6667C13.4 14 14 13.4 14 12.6667V8H12.6667V12.6667ZM9.33333 2V3.33333H11.7267L5.17333 9.88667L6.11333 10.8267L12.6667 4.27333V6.66667H14V2H9.33333Z" fill="#005C9F"/>
+						</svg>
+					</span>
+				</a>
+				<a class="tab tab-contact" href="#">Contacto</a>
+				<span class="alert">¡No te pierdas las novedades!</span>
+			</nav>
+		</header>
+		<main class="container">
+			<section id="view-explora" class="view">
+				<div class="explore-grid two-col">
+					<article class="card">
+						<div class="card-header">
+							<span class="card-icon" aria-hidden="true">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.9988 8.571C12.2088 8.571 11.5688 9.211 11.5688 10.001C11.5688 10.791 12.2088 11.431 12.9988 11.431C13.7888 11.431 14.4288 10.791 14.4288 10.001C14.4288 9.211 13.7888 8.571 12.9988 8.571Z" fill="#005C9F"/>
+									<path d="M13.2088 3.001C9.36885 2.891 6.20885 5.871 6.01885 9.641L4.09885 12.201C3.84885 12.531 4.08885 13.001 4.49885 13.001H5.99885V16.001C5.99885 17.101 6.89885 18.001 7.99885 18.001H8.99885V20.001C8.99885 20.551 9.44885 21.001 9.99885 21.001H14.9988C15.5488 21.001 15.9988 20.551 15.9988 20.001V16.321C18.4388 15.161 20.0988 12.641 19.9988 9.741C19.8588 6.121 16.8188 3.111 13.2088 3.001ZM15.9988 10.001C15.9988 10.131 15.9888 10.261 15.9788 10.391L16.8088 11.051C16.8888 11.111 16.9088 11.211 16.8588 11.301L16.0588 12.691C16.0088 12.781 15.8988 12.811 15.8188 12.781L14.8288 12.381C14.6188 12.541 14.3988 12.671 14.1588 12.771L13.9988 13.831C13.9888 13.931 13.8988 14.001 13.7988 14.001H12.1988C12.0988 14.001 12.0188 13.931 11.9988 13.831L11.8488 12.771C11.5988 12.671 11.3788 12.541 11.1688 12.381L10.1788 12.781C10.0888 12.811 9.97885 12.781 9.92885 12.691L9.12885 11.301C9.07885 11.221 9.09885 11.111 9.17885 11.051L10.0188 10.391C10.0088 10.261 9.99885 10.131 9.99885 10.001C9.99885 9.871 10.0188 9.731 10.0388 9.611L9.18885 8.951C9.10885 8.891 9.08885 8.791 9.13885 8.691L9.93885 7.311C9.98885 7.221 10.0888 7.191 10.1788 7.221L11.1788 7.621C11.3788 7.471 11.6088 7.331 11.8488 7.231L11.9988 6.171C12.0188 6.071 12.0988 6.001 12.1988 6.001H13.7988C13.8988 6.001 13.9788 6.071 13.9988 6.171L14.1488 7.231C14.3888 7.331 14.6088 7.461 14.8188 7.621L15.8188 7.221C15.9088 7.191 16.0188 7.221 16.0588 7.311L16.8588 8.691C16.9088 8.781 16.8888 8.891 16.8088 8.951L15.9588 9.611C15.9888 9.731 15.9988 9.861 15.9988 10.001Z" fill="#005C9F"/>
+								</svg>
+							</span>
             FÓRMATE EN NUESTRAS ACADEMIAS
-            <span class="chevron" aria-hidden="true">›</span>
-          </div>
-          <div class="card-body">
-            <div class="subtabs" role="tablist">
-              <a class="subtab subtab-link" data-target="academia-ia" href="">Academia IA</a>
-              <a class="subtab subtab-link active" data-target="academia-datos" href="">Academia Datos</a>
-            </div>
-            <div class="subtab-panel" id="academia-ia">
-              <ul class="simple-list">
-                <li>Itinerarios IA</li>
-                <li>Portal IA</li>
-                <li>Playlist Masterclass</li>
-                <li>Playlist TechTalks</li>
-                <li>Playlist Fundamentos programación</li>
-              </ul>
-            </div>
-            <div class="subtab-panel active" id="academia-datos">
-              <ul class="simple-list">
-                <li>Itinerarios Datos</li>
-                <li>Portal del Dato</li>
-                <li>Playlist Excel y Datos</li>
-                <li>Playlist Power BI desde cero</li>
-                <li>Playlist Fundamentos SQL</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-header">
-            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"/><path d="M6 16l4-4 3 3 5-6"/><path d="M7 7h10"/></svg></span>
+            <span class="chevron" aria-hidden="true">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z" fill="#005C9F"/>
+								</svg>
+							</span>
+						</div>
+						<div class="card-body">
+							<div class="subtabs" role="tablist">
+								<button class="subtab" data-target="academia-ia" type="button">Academia IA</button>
+								<button class="subtab active" data-target="academia-datos" type="button">Academia Datos</button>
+							</div>
+							<div class="subtab-panel" id="academia-ia">
+								<ul class="simple-list">
+									<li>Itinerarios IA</li>
+									<li>Portal IA</li>
+									<li>Playlist Masterclass</li>
+									<li>Playlist TechTalks</li>
+									<li>Playlist Fundamentos programación</li>
+								</ul>
+							</div>
+							<div class="subtab-panel active" id="academia-datos">
+								<ul class="simple-list">
+									<li>Itinerarios Datos</li>
+									<li>Portal del Dato</li>
+									<li>Playlist Excel y Datos</li>
+									<li>Playlist Power BI desde cero</li>
+									<li>Playlist Fundamentos SQL</li>
+								</ul>
+							</div>
+						</div>
+					</article>
+					<article class="card">
+						<div class="card-header">
+							<span class="card-icon" aria-hidden="true">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M10.92 12.4434L12 11.6234L13.07 12.4334C13.46 12.7234 13.99 12.3534 13.85 11.8834L13.43 10.5234L14.63 9.57336C15 9.29336 14.79 8.69336 14.31 8.69336H12.91L12.48 7.35336C12.33 6.89336 11.68 6.89336 11.53 7.35336L11.09 8.69336H9.68C9.21 8.69336 9 9.29336 9.37 9.58336L10.56 10.5334L10.14 11.8934C10 12.3634 10.53 12.7334 10.92 12.4434ZM6 21.3034C6 21.9834 6.67 22.4634 7.32 22.2534L12 20.6934L16.68 22.2534C17.33 22.4734 18 21.9934 18 21.3034V14.9734C19.24 13.5634 20 11.7234 20 9.69336C20 5.27336 16.42 1.69336 12 1.69336C7.58 1.69336 4 5.27336 4 9.69336C4 11.7234 4.76 13.5634 6 14.9734V21.3034ZM12 3.69336C15.31 3.69336 18 6.38336 18 9.69336C18 13.0034 15.31 15.6934 12 15.6934C8.69 15.6934 6 13.0034 6 9.69336C6 6.38336 8.69 3.69336 12 3.69336Z" fill="#005C9F"/>
+								</svg>
+							</span>
             AVANZA EN TUS COMPETENCIAS
-            <span class="chevron" aria-hidden="true">›</span>
-          </div>
-          <div class="card-body">
-            <div class="subtabs" role="tablist">
-              <a class="subtab subtab-link" data-target="competencias-agilidad" href="">Agilidad</a>
-              <a class="subtab subtab-link active" data-target="competencias-liderazgo" href="">Liderazgo y Competencias</a>
-            </div>
-            <div class="subtab-panel" id="competencias-agilidad">
-              <ul class="simple-list">
-                <li>Itinerario o evento 1</li>
-                <li>Itinerario o evento 2</li>
-                <li>Rincón Agilidad</li>
-                <li>Playlist 1</li>
-                <li>Playlist 2</li>
-              </ul>
-            </div>
-            <div class="subtab-panel active" id="competencias-liderazgo">
-              <ul class="simple-list">
-                <li>Programa FOCUS</li>
-                <li>Itinerario o evento 1</li>
-                <li>Itinerario o evento 2</li>
-                <li>Playlist 1</li>
-                <li>Playlist 2</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div class="explore-grid three-col" style="margin-top:16px;">
-        <article class="card">
-          <div class="card-header">
-            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20l9-5-9-5-9 5 9 5"/><path d="M12 12l9-5-9-5-9 5 9 5"/></svg></span>
+            <span class="chevron" aria-hidden="true">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z" fill="#005C9F"/>
+								</svg>
+							</span>
+						</div>
+						<div class="card-body">
+							<div class="subtabs" role="tablist">
+								<button class="subtab" data-target="competencias-agilidad" type="button">Agilidad</button>
+								<button class="subtab active" data-target="competencias-liderazgo" type="button">Liderazgo y Competencias</button>
+							</div>
+							<div class="subtab-panel" id="competencias-agilidad">
+								<ul class="simple-list">
+									<li>Itinerario o evento 1</li>
+									<li>Itinerario o evento 2</li>
+									<li>Rincón Agilidad</li>
+									<li>Playlist 1</li>
+									<li>Playlist 2</li>
+								</ul>
+							</div>
+							<div class="subtab-panel active" id="competencias-liderazgo">
+								<ul class="simple-list">
+									<li>Programa FOCUS</li>
+									<li>Itinerario o evento 1</li>
+									<li>Itinerario o evento 2</li>
+									<li>Playlist 1</li>
+									<li>Playlist 2</li>
+								</ul>
+							</div>
+						</div>
+					</article>
+				</div>
+				<div class="explore-grid three-col" style="margin-top:16px;">
+					<article class="card">
+						<div class="card-header">
+							<span class="card-icon" aria-hidden="true">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M9.19002 6.34976C7.15002 8.63976 5.75002 11.9298 5.62002 12.2398L3.36002 11.2698C2.71002 10.9898 2.55002 10.1398 3.05002 9.63976L6.06002 6.62976C6.53002 6.15976 7.21002 5.94976 7.87002 6.07976L9.19002 6.34976ZM10.68 16.5098C10.98 16.8098 11.42 16.8898 11.8 16.7098C12.96 16.1698 15.45 14.8998 17.06 13.2898C21.65 8.69976 21.69 4.95976 21.42 3.35976C21.3845 3.16328 21.2898 2.98234 21.1486 2.84116C21.0074 2.69998 20.8265 2.60529 20.63 2.56976C19.03 2.29976 15.29 2.33976 10.7 6.92976C9.09002 8.53976 7.83002 11.0298 7.28002 12.1898C7.10002 12.5698 7.19002 13.0198 7.48002 13.3098L10.68 16.5098ZM17.65 14.8098C15.36 16.8498 12.07 18.2498 11.76 18.3798L12.73 20.6398C13.01 21.2898 13.86 21.4498 14.36 20.9498L17.37 17.9398C17.84 17.4698 18.05 16.7898 17.92 16.1298L17.65 14.8098ZM8.94002 17.4098C9.03699 17.8941 9.01288 18.3948 8.86983 18.8676C8.72678 19.3403 8.46922 19.7705 8.12002 20.1198C7.35002 20.8898 4.96002 21.4598 3.41002 21.7598C2.72002 21.8898 2.11002 21.2798 2.24002 20.5898C2.54002 19.0398 3.10002 16.6498 3.88002 15.8798C4.22932 15.5306 4.65944 15.273 5.13219 15.1299C5.60495 14.9869 6.10571 14.9628 6.59002 15.0598C7.76002 15.2798 8.72002 16.2398 8.94002 17.4098ZM13 8.99976C13 7.89976 13.9 6.99976 15 6.99976C16.1 6.99976 17 7.89976 17 8.99976C17 10.0998 16.1 10.9998 15 10.9998C13.9 10.9998 13 10.0998 13 8.99976Z" fill="#005C9F"/>
+								</svg>
+							</span>
             AVANZA EN TUS PRIMEROS PASOS
-            <span class="chevron" aria-hidden="true">›</span>
-          </div>
-          <div class="card-body">
-            <ul class="simple-list">
-              <li>Acceso Comunidades promoción vertical</li>
-              <li>Itinerario Onboarding Comunidad IT</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-header">
-            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h7l2 2h9v8a2 2 0 0 1-2 2H3z"/><path d="M3 7v10"/></svg></span>
+            <span class="chevron" aria-hidden="true">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z" fill="#005C9F"/>
+								</svg>
+							</span>
+						</div>
+						<div class="card-body">
+							<ul class="simple-list">
+								<li>Acceso Comunidades promoción vertical</li>
+								<li>Itinerario Onboarding Comunidad IT</li>
+							</ul>
+						</div>
+					</article>
+					<article class="card">
+						<div class="card-header">
+							<span class="card-icon" aria-hidden="true">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M17.5049 3.67773C15.5549 3.67773 13.4549 4.07773 12.0049 5.17773C10.5549 4.07773 8.45488 3.67773 6.50488 3.67773C5.05488 3.67773 3.51488 3.89773 2.22488 4.46773C1.49488 4.79773 1.00488 5.50773 1.00488 6.31773V17.5977C1.00488 18.8977 2.22488 19.8577 3.48488 19.5377C4.46488 19.2877 5.50488 19.1777 6.50488 19.1777C8.06488 19.1777 9.72488 19.4377 11.0649 20.0977C11.6649 20.3977 12.3449 20.3977 12.9349 20.0977C14.2749 19.4277 15.9349 19.1777 17.4949 19.1777C18.4949 19.1777 19.5349 19.2877 20.5149 19.5377C21.7749 19.8677 22.9949 18.9077 22.9949 17.5977V6.31773C22.9949 5.50773 22.5049 4.79773 21.7749 4.46773C20.4949 3.89773 18.9549 3.67773 17.5049 3.67773ZM21.0049 16.4077C21.0049 17.0377 20.4249 17.4977 19.8049 17.3877C19.0549 17.2477 18.2749 17.1877 17.5049 17.1877C15.8049 17.1877 13.3549 17.8377 12.0049 18.6877V7.17773C13.3549 6.32773 15.8049 5.67773 17.5049 5.67773C18.4249 5.67773 19.3349 5.76773 20.2049 5.95773C20.6649 6.05773 21.0049 6.46773 21.0049 6.93773V16.4077Z" fill="#005C9F"/>
+								</svg>
+							</span>
             AVANZA EN TU CONOCIMIENTO Y ESPECIALIZACIÓN
-            <span class="chevron" aria-hidden="true">›</span>
-          </div>
-          <div class="card-body">
-            <div class="subtabs" role="tablist">
-              <a class="subtab subtab-link" data-target="especializacion-itinerarios" href="">Itinerarios</a>
-              <a class="subtab subtab-link active" data-target="especializacion-catalogo" href="">Catálogo internacional</a>
-              <a class="subtab subtab-link" data-target="especializacion-playlists" href="">Playlists</a>
-            </div>
-            <div class="subtab-panel" id="especializacion-itinerarios">
-              <ul class="simple-list">
-                <li>Supervisión, Regulación y Riesgos Financieros</li>
-                <li>Economía, Mercados y Análisis Cuantitativo</li>
-                <li>Gestión Organizativa, Personas y Sistemas</li>
-                <li>Marco Institucional, Normativo y de Sostenibilidad</li>
-              </ul>
-            </div>
-            <div class="subtab-panel active" id="especializacion-catalogo">
-              <ul class="simple-list">
-                <li>Lista de cursos</li>
-                <li>Solicitud</li>
-                <li>Eureka</li>
-              </ul>
-            </div>
-            <div class="subtab-panel" id="especializacion-playlists">
-              <ul class="simple-list">
-                <li>Playlist data engineering</li>
-                <li>Playlist UX research</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-header">
-            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20"/></svg></span>
+            <span class="chevron" aria-hidden="true">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z" fill="#005C9F"/>
+								</svg>
+							</span>
+						</div>
+						<div class="card-body">
+							<div class="subtabs" role="tablist">
+								<button class="subtab" data-target="especializacion-itinerarios" type="button">Itinerarios</button>
+								<button class="subtab active" data-target="especializacion-catalogo" type="button">Catálogo internacional</button>
+								<button class="subtab" data-target="especializacion-playlists" type="button">Playlists</button>
+							</div>
+							<div class="subtab-panel" id="especializacion-itinerarios">
+								<ul class="simple-list">
+									<li>Supervisión, Regulación y Riesgos Financieros</li>
+									<li>Economía, Mercados y Análisis Cuantitativo</li>
+									<li>Gestión Organizativa, Personas y Sistemas</li>
+									<li>Marco Institucional, Normativo y de Sostenibilidad</li>
+								</ul>
+							</div>
+							<div class="subtab-panel active" id="especializacion-catalogo">
+								<ul class="simple-list">
+									<li>Lista de cursos</li>
+									<li>Solicitud</li>
+									<li>Eureka</li>
+								</ul>
+							</div>
+							<div class="subtab-panel" id="especializacion-playlists">
+								<ul class="simple-list">
+									<li>Playlist data engineering</li>
+									<li>Playlist UX research</li>
+								</ul>
+							</div>
+						</div>
+					</article>
+					<article class="card">
+						<div class="card-header">
+							<span class="card-icon" aria-hidden="true">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z" fill="#005C9F"/>
+								</svg>
+							</span>
             AVANZA SIN FRONTERAS
-            <span class="chevron" aria-hidden="true">›</span>
-          </div>
-          <div class="card-body">
-            <div class="subtabs" role="tablist">
-              <a class="subtab subtab-link" data-target="fronteras-servicios" href="">Servicios centrales</a>
-              <a class="subtab subtab-link active" data-target="fronteras-sucursales" href="">Sucursales</a>
-              <a class="subtab subtab-link" data-target="fronteras-playlists" href="">Playlists</a>
-            </div>
-            <div class="subtab-panel" id="fronteras-servicios">
-              <ul class="simple-list">
-                <li>Programa próximamente</li>
-                <li>Cursos de verano</li>
-                <li>Curso intensivo</li>
-              </ul>
-            </div>
-            <div class="subtab-panel active" id="fronteras-sucursales">
-              <ul class="simple-list">
-                <li>Guía procedimiento de reembolso</li>
-                <li>Programa próximamente</li>
-              </ul>
-            </div>
-            <div class="subtab-panel" id="fronteras-playlists">
-              <ul class="simple-list">
-                <li>Playlist internacionalización</li>
-                <li>Playlist idiomas</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="view-formacion" class="view active">
-      <section class="grid">
-        <!-- Enlaces de interés -->
-        <article class="card">
-          <div class="card-header"><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 1 0-7l1-1a5 5 0 0 1 7 7l-1 1"/><path d="M14 11a5 5 0 0 1 0 7l-1 1a5 5 0 0 1-7-7l1-1"/></svg></span>ENLACES DE INTERÉS</div>
-          <div class="card-body">
-            <div class="section-title">Formación externa</div>
-            <ul class="link-list">
-              <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Formación ad hoc: consulta el procedimiento</span></a></li>
-              <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Justifica tu petición</span></a></li>
-            </ul>
-
-            <div class="divider"></div>
-
-            <div class="section-title">Accede a tu expediente</div>
-            <ul class="link-list">
-              <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Consulta o certifica tu expediente formativo</span></a></li>
-            </ul>
-
-            <div class="divider"></div>
-
-            <div class="section-title">Oferta formativa</div>
-            <button class="btn-outline">EXPLORAR MÁS CURSOS DISPONIBLES</button>
-          </div>
-        </article>
-
-        <!-- Columna derecha -->
-        <div>
-          <article class="card" style="margin-bottom:16px;">
-            <div class="card-header"><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h4v4H3z"/><path d="M10 13h4v8h-4z"/><path d="M17 9h4v12h-4z"/></svg></span>MI PROGRESO</div>
-            <div class="card-body">
-              <div class="progress-item">
-                <span>Formación asignada u obligatoria</span>
-                <span class="badge">2</span>
-              </div>
-              <div class="progress-item">
-                <span>Formación en progreso</span>
-                <span class="badge">2</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-header"><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.9.3-1.5 1.1-1.5 2.1"/><path d="M12 17h.01"/></svg></span>PREGUNTAS FRECUENTES</div>
-            <div class="card-body">
-              <ul class="faq-list">
-                <li>¿Cómo va mi formación?</li>
-                <li>¿Cómo consulto el estado de un curso?</li>
-                <li>¿Cómo cancelo una formación?</li>
-              </ul>
-              <button class="btn-small">VER TODAS LAS FAQ'S</button>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- Sección inferior -->
-      <section class="card section-wide">
-        <div class="card-header"><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h7l2 2h9v8a2 2 0 0 1-2 2H3z"/><path d="M3 7v10"/></svg></span>SECCIÓN</div>
-        <div class="card-body split">
-          <div class="col">
-            <div class="subtitle">Interlocutores</div>
-            <div class="section-title">Guía para solicitar nueva formación</div>
-            <ul class="link-list">
-              <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Documento de solicitud</span></a></li>
-            </ul>
-          </div>
-          <div class="col">
-            <div class="subtitle">Responsables</div>
-            <div class="section-title">Consulta tus informes de formación</div>
-            <ul class="link-list">
-              <li><a class="link-with-icon" href="#"><svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Ver informes</span></a></li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </section>
-  </main>
-
-  <script>
+            <span class="chevron" aria-hidden="true">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z" fill="#005C9F"/>
+								</svg>
+							</span>
+						</div>
+						<div class="card-body">
+							<div class="subtabs" role="tablist">
+								<button class="subtab" data-target="fronteras-servicios" type="button">Servicios centrales</button>
+								<button class="subtab active" data-target="fronteras-sucursales" type="button">Sucursales</button>
+								<button class="subtab" data-target="fronteras-playlists" type="button">Playlists</button>
+							</div>
+							<div class="subtab-panel" id="fronteras-servicios">
+								<ul class="simple-list">
+									<li>Programa próximamente</li>
+									<li>Cursos de verano</li>
+									<li>Curso intensivo</li>
+								</ul>
+							</div>
+							<div class="subtab-panel active" id="fronteras-sucursales">
+								<ul class="simple-list">
+									<li>Guía procedimiento de reembolso</li>
+									<li>Programa próximamente</li>
+								</ul>
+							</div>
+							<div class="subtab-panel" id="fronteras-playlists">
+								<ul class="simple-list">
+									<li>Playlist internacionalización</li>
+									<li>Playlist idiomas</li>
+								</ul>
+							</div>
+						</div>
+					</article>
+				</div>
+			</section>
+			<section id="view-formacion" class="view active">
+				<section class="grid">
+					<!-- Enlaces de interés -->
+					<article class="card">
+						<div class="card-header">
+							<span class="card-icon" aria-hidden="true">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M17 7H14C13.45 7 13 7.45 13 8C13 8.55 13.45 9 14 9H17C18.65 9 20 10.35 20 12C20 13.65 18.65 15 17 15H14C13.45 15 13 15.45 13 16C13 16.55 13.45 17 14 17H17C19.76 17 22 14.76 22 12C22 9.24 19.76 7 17 7ZM8 12C8 12.55 8.45 13 9 13H15C15.55 13 16 12.55 16 12C16 11.45 15.55 11 15 11H9C8.45 11 8 11.45 8 12ZM10 15H7C5.35 15 4 13.65 4 12C4 10.35 5.35 9 7 9H10C10.55 9 11 8.55 11 8C11 7.45 10.55 7 10 7H7C4.24 7 2 9.24 2 12C2 14.76 4.24 17 7 17H10C10.55 17 11 16.55 11 16C11 15.45 10.55 15 10 15Z" fill="#005C9F"/>
+								</svg>
+							</span>ENLACES DE INTERÉS</div>
+						<div class="card-body">
+							<div class="section-title">Formación externa</div>
+							<ul class="link-list">
+								<li>
+									<a class="link-with-icon" href="#">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M9.72675 1.72634C9.47342 1.47301 9.13341 1.33301 8.78008 1.33301H4.00008C3.26675 1.33301 2.66675 1.93301 2.66675 2.66634V13.333C2.66675 14.0663 3.26008 14.6663 3.99341 14.6663H12.0001C12.7334 14.6663 13.3334 14.0663 13.3334 13.333V5.88634C13.3334 5.53301 13.1934 5.19301 12.9401 4.94634L9.72675 1.72634ZM10.0001 11.9997H6.00008C5.63341 11.9997 5.33341 11.6997 5.33341 11.333C5.33341 10.9663 5.63341 10.6663 6.00008 10.6663H10.0001C10.3667 10.6663 10.6667 10.9663 10.6667 11.333C10.6667 11.6997 10.3667 11.9997 10.0001 11.9997ZM10.0001 9.33301H6.00008C5.63341 9.33301 5.33341 9.03301 5.33341 8.66634C5.33341 8.29967 5.63341 7.99967 6.00008 7.99967H10.0001C10.3667 7.99967 10.6667 8.29967 10.6667 8.66634C10.6667 9.03301 10.3667 9.33301 10.0001 9.33301ZM8.66675 5.33301V2.33301L12.3334 5.99967H9.33341C8.96675 5.99967 8.66675 5.69967 8.66675 5.33301Z" fill="#005C9F"/>
+										</svg>
+										<span>Formación ad hoc: consulta el procedimiento</span>
+									</a>
+								</li>
+								<li>
+									<a class="link-with-icon" href="#">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M12.6667 2.66634H9.88C9.6 1.89301 8.86667 1.33301 8 1.33301C7.13333 1.33301 6.4 1.89301 6.12 2.66634H3.33333C2.6 2.66634 2 3.26634 2 3.99967V13.333C2 14.0663 2.6 14.6663 3.33333 14.6663H12.6667C13.4 14.6663 14 14.0663 14 13.333V3.99967C14 3.26634 13.4 2.66634 12.6667 2.66634ZM8 2.66634C8.36667 2.66634 8.66667 2.96634 8.66667 3.33301C8.66667 3.69967 8.36667 3.99967 8 3.99967C7.63333 3.99967 7.33333 3.69967 7.33333 3.33301C7.33333 2.96634 7.63333 2.66634 8 2.66634ZM8.66667 11.9997H5.33333C4.96667 11.9997 4.66667 11.6997 4.66667 11.333C4.66667 10.9663 4.96667 10.6663 5.33333 10.6663H8.66667C9.03333 10.6663 9.33333 10.9663 9.33333 11.333C9.33333 11.6997 9.03333 11.9997 8.66667 11.9997ZM10.6667 9.33301H5.33333C4.96667 9.33301 4.66667 9.03301 4.66667 8.66634C4.66667 8.29967 4.96667 7.99967 5.33333 7.99967H10.6667C11.0333 7.99967 11.3333 8.29967 11.3333 8.66634C11.3333 9.03301 11.0333 9.33301 10.6667 9.33301ZM10.6667 6.66634H5.33333C4.96667 6.66634 4.66667 6.36634 4.66667 5.99967C4.66667 5.63301 4.96667 5.33301 5.33333 5.33301H10.6667C11.0333 5.33301 11.3333 5.63301 11.3333 5.99967C11.3333 6.36634 11.0333 6.66634 10.6667 6.66634Z" fill="#005C9F"/>
+										</svg>
+										<span>Justifica tu petición</span>
+									</a>
+								</li>
+							</ul>
+							<div class="divider"/>
+							<div class="section-title">Accede a tu expediente</div>
+							<ul class="link-list">
+								<li>
+									<a class="link-with-icon" href="#">
+										<span>Consulta o certifica tu expediente formativo</span>
+									</a>
+								</li>
+							</ul>
+							<div class="divider"/>
+							<div class="section-title">Oferta formativa</div>
+							<button class="btn-outline">EXPLORAR MÁS CURSOS DISPONIBLES</button>
+						</div>
+					</article>
+					<!-- Columna derecha -->
+					<div>
+						<article class="card" style="margin-bottom:16px;">
+							<div class="card-header">
+								<span class="card-icon" aria-hidden="true">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4.45364 13.1764V15.9864C4.45364 16.7164 4.85364 17.3964 5.49364 17.7464L10.4936 20.4764C11.0936 20.8064 11.8136 20.8064 12.4136 20.4764L17.4136 17.7464C18.0536 17.3964 18.4536 16.7164 18.4536 15.9864V13.1764L12.4136 16.4764C11.8136 16.8064 11.0936 16.8064 10.4936 16.4764L4.45364 13.1764ZM10.4936 3.51637L2.06364 8.11637C1.37364 8.49637 1.37364 9.49637 2.06364 9.87637L10.4936 14.4764C11.0936 14.8064 11.8136 14.8064 12.4136 14.4764L20.4536 10.0864V15.9964C20.4536 16.5464 20.9036 16.9964 21.4536 16.9964C22.0036 16.9964 22.4536 16.5464 22.4536 15.9964V9.58637C22.4536 9.21637 22.2536 8.88637 21.9336 8.70637L12.4136 3.51637C11.8136 3.19637 11.0936 3.19637 10.4936 3.51637Z" fill="#005C9F"/>
+									</svg>
+								</span>MI PROGRESO</div>
+							<div class="card-body">
+								<div class="progress-item">
+									<span>Formación asignada u obligatoria</span>
+									<span class="badge">2</span>
+								</div>
+								<div class="progress-item">
+									<span>Formación en progreso</span>
+									<span class="badge">2</span>
+								</div>
+							</div>
+						</article>
+						<article class="card">
+							<div class="card-header">
+								<span class="card-icon" aria-hidden="true">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12 2C7.31 2 3.5 5.81 3.5 10.5C3.5 15.19 7.31 19 12 19H12.5V22C17.36 19.66 20.5 15 20.5 10.5C20.5 5.81 16.69 2 12 2ZM13 16.5H11V14.5H13V16.5ZM13.4 11.72C13.39 11.73 13.38 11.75 13.37 11.77C13.32 11.85 13.27 11.93 13.23 12.01C13.21 12.04 13.2 12.08 13.19 12.12C13.16 12.19 13.13 12.26 13.11 12.33C13.04 12.54 13.01 12.76 13.01 13.01H11C11 12.5 11.08 12.07 11.2 11.71C11.2 11.7 11.2 11.69 11.21 11.68C11.22 11.64 11.25 11.62 11.26 11.58C11.32 11.42 11.39 11.28 11.48 11.14C11.51 11.09 11.55 11.04 11.58 10.99C11.61 10.95 11.63 10.9 11.66 10.87L11.67 10.88C12.51 9.78 13.88 9.44 13.99 8.2C14.08 7.22 13.38 6.27 12.42 6.07C11.38 5.85 10.44 6.46 10.12 7.35C9.98 7.71 9.65 8 9.24 8H9.04C8.44 8 8 7.41 8.17 6.83C8.72 5.01 10.54 3.74 12.6 4.04C14.29 4.29 15.64 5.68 15.93 7.37C16.37 9.81 14.3 10.4 13.4 11.72Z" fill="#005C9F"/>
+									</svg>
+								</span>PREGUNTAS FRECUENTES</div>
+							<div class="card-body">
+								<ul class="faq-list">
+									<li>¿Cómo va mi formación?</li>
+									<li>¿Cómo consulto el estado de un curso?</li>
+									<li>¿Cómo cancelo una formación?</li>
+								</ul>
+								<button class="btn-small">VER TODAS LAS FAQ'S</button>
+							</div>
+						</article>
+					</div>
+				</section>
+				<!-- Sección inferior -->
+				<section class="card section-wide">
+					<div class="card-header">
+						<span class="card-icon" aria-hidden="true">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M10.59 4.59C10.21 4.21 9.7 4 9.17 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V8C22 6.9 21.1 6 20 6H12L10.59 4.59Z" fill="#005C9F"/>
+							</svg>
+						</span>OTROS</div>
+					<div class="card-body split">
+						<div class="col">
+							<div class="subtitle">Interlocutores</div>
+							<div class="section-title">
+								<a href="#">Guía para solicitar nueva formación</a>
+							</div>
+							<ul class="link-list">
+								<li>
+									<a class="link-with-icon" href="#">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M9.72675 1.72634C9.47342 1.47301 9.13341 1.33301 8.78008 1.33301H4.00008C3.26675 1.33301 2.66675 1.93301 2.66675 2.66634V13.333C2.66675 14.0663 3.26008 14.6663 3.99341 14.6663H12.0001C12.7334 14.6663 13.3334 14.0663 13.3334 13.333V5.88634C13.3334 5.53301 13.1934 5.19301 12.9401 4.94634L9.72675 1.72634ZM10.0001 11.9997H6.00008C5.63341 11.9997 5.33341 11.6997 5.33341 11.333C5.33341 10.9663 5.63341 10.6663 6.00008 10.6663H10.0001C10.3667 10.6663 10.6667 10.9663 10.6667 11.333C10.6667 11.6997 10.3667 11.9997 10.0001 11.9997ZM10.0001 9.33301H6.00008C5.63341 9.33301 5.33341 9.03301 5.33341 8.66634C5.33341 8.29967 5.63341 7.99967 6.00008 7.99967H10.0001C10.3667 7.99967 10.6667 8.29967 10.6667 8.66634C10.6667 9.03301 10.3667 9.33301 10.0001 9.33301ZM8.66675 5.33301V2.33301L12.3334 5.99967H9.33341C8.96675 5.99967 8.66675 5.69967 8.66675 5.33301Z" fill="#005C9F"/>
+										</svg>
+										<span>Documento de solicitud</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col">
+							<div class="subtitle">Responsables</div>
+							<div class="section-title">Consulta tus informes de formación</div>
+							<ul class="link-list">
+								<li>
+									<a class="link-with-icon" href="#">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M9.72675 1.72634C9.47342 1.47301 9.13341 1.33301 8.78008 1.33301H4.00008C3.26675 1.33301 2.66675 1.93301 2.66675 2.66634V13.333C2.66675 14.0663 3.26008 14.6663 3.99341 14.6663H12.0001C12.7334 14.6663 13.3334 14.0663 13.3334 13.333V5.88634C13.3334 5.53301 13.1934 5.19301 12.9401 4.94634L9.72675 1.72634ZM10.0001 11.9997H6.00008C5.63341 11.9997 5.33341 11.6997 5.33341 11.333C5.33341 10.9663 5.63341 10.6663 6.00008 10.6663H10.0001C10.3667 10.6663 10.6667 10.9663 10.6667 11.333C10.6667 11.6997 10.3667 11.9997 10.0001 11.9997ZM10.0001 9.33301H6.00008C5.63341 9.33301 5.33341 9.03301 5.33341 8.66634C5.33341 8.29967 5.63341 7.99967 6.00008 7.99967H10.0001C10.3667 7.99967 10.6667 8.29967 10.6667 8.66634C10.6667 9.03301 10.3667 9.33301 10.0001 9.33301ZM8.66675 5.33301V2.33301L12.3334 5.99967H9.33341C8.96675 5.99967 8.66675 5.69967 8.66675 5.33301Z" fill="#005C9F"/>
+										</svg>
+										<span>Ver informes</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</section>
+		</main>
+		<script>
     const viewTabs = document.querySelectorAll('.tab[data-view]');
     const views = document.querySelectorAll('.view');
 
@@ -676,10 +739,7 @@
     document.querySelectorAll('.subtabs').forEach(subtabGroup => {
       const tabs = subtabGroup.querySelectorAll('.subtab');
       tabs.forEach(button => {
-        button.addEventListener('click', (e) => {
-          if (button.getAttribute('href') === '') {
-            e.preventDefault();
-          }
+        button.addEventListener('click', () => {
           tabs.forEach(t => t.classList.remove('active'));
           button.classList.add('active');
           const parentCard = subtabGroup.closest('.card');
@@ -690,5 +750,5 @@
       });
     });
   </script>
-</body>
+	</body>
 </html>
