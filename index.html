@@ -767,7 +767,7 @@
               <div class="divider">
 
               <div class="section-title">Oferta formativa</div>
-              <button class="btn-outline">EXPLORAR MÁS CURSOS DISPONIBLES</button>
+              <button class="btn-outline" data-redirect="https://www.google.es">EXPLORAR MÁS CURSOS DISPONIBLES</button>
             </div>
           </div></div></article>
           <!-- Columna derecha -->
@@ -832,7 +832,7 @@
                     <div class="faq-content">Para que cualquier formación, sea presencial o telemática, se refleje en tu expediente, es necesario registrarse previamente en Mi Espacio en el curso correspondiente.</div>
                   </div>
                 </div>
-                <button class="btn-small">VER TODAS LAS FAQ'S</button>
+                <button class="btn-small" data-redirect="https://www.google.es">VER TODAS LAS FAQ'S</button>
               </div>
             </article>
           </div>
@@ -1024,6 +1024,12 @@
   }
 
 });
+
+    document.querySelectorAll('[data-redirect]').forEach(button => {
+      button.addEventListener('click', () => {
+        window.location.href = button.dataset.redirect;
+      });
+    });
 
     </script>
   </body>
