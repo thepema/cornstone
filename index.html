@@ -64,6 +64,20 @@
         text-decoration: underline;
         font-weight: 600;
       }
+      .tab-contact .contact-wrap {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .tab-contact .contact-icon {
+        display: none;
+        align-items: center;
+        color: var(--primary);
+      }
+      .tab-contact .contact-icon svg {
+        width: 12px;
+        height: 12px;
+      }
       .external-icon {
         display: inline-flex;
         align-items: center;
@@ -426,6 +440,11 @@
           display: none;
         }
       }
+      @media (max-width: 499px) {
+        .tab-contact .contact-icon {
+          display: inline-flex;
+        }
+      }
       .no-underline{
         text-decoration: none;
       }
@@ -447,7 +466,16 @@
               </svg>
             </span>
           </a>
-          <a class="tab tab-contact" href="mailto:formacion@bde.es">Contacto</a> 
+          <a class="tab tab-contact" href="mailto:formacion@bde.es">
+            <span class="contact-wrap">
+              <span>Contacto</span>
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.3334 3.33301H2.66675C1.93341 3.33301 1.33341 3.93301 1.33341 4.66634V11.333C1.33341 12.0663 1.93341 12.6663 2.66675 12.6663H13.3334C14.0667 12.6663 14.6667 12.0663 14.6667 11.333V4.66634C14.6667 3.93301 14.0667 3.33301 13.3334 3.33301ZM13.3334 5.99967L8.00008 9.33301L2.66675 5.99967V4.66634L8.00008 7.99967L13.3334 4.66634V5.99967Z" fill="currentColor"></path>
+                </svg>
+              </span>
+            </span>
+          </a> 
         </div>
         <div>
           <span class="alert"> <a class="no-underline" href="/ui/lms-learner-search/search?pageNumber=1&amp;query=MIE_Novedades">¡Explora las novedades!</a></span>
