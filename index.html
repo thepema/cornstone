@@ -444,10 +444,26 @@
         .tab-contact .contact-icon {
           display: inline-flex;
         }
+        .tab-contact .contact-text{
+          display: none;
+        }
+        .calendar-text{
+          display: none;
+        }
       }
+	@media (max-width: 399px) {
+	.tab{
+	 padding: 10px 4px 12px;
+	}
+	.card{
+	  padding: 0px;
+	}
+}
       .no-underline{
         text-decoration: none;
       }
+      
+
     </style>
   </head>
 
@@ -459,8 +475,8 @@
           <a class="tab active" data-view="explora">Explora</a>
           <a class="tab" data-view="formacion">Mi formación</a>
           <a class="tab" href="/LMS/catalog/EventsCalendar.aspx">
-            Calendario
-            <span class="external-icon" aria-hidden="true">
+            <span class="calendar-text">Calendario</span>
+            <span class="external-icon" aria-hidden="true" aria-label="Calendario">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.6667 12.6667H3.33333V3.33333H8V2H3.33333C2.59333 2 2 2.6 2 3.33333V12.6667C2 13.4 2.59333 14 3.33333 14H12.6667C13.4 14 14 13.4 14 12.6667V8H12.6667V12.6667ZM9.33333 2V3.33333H11.7267L5.17333 9.88667L6.11333 10.8267L12.6667 4.27333V6.66667H14V2H9.33333Z" fill="#005C9F"></path>
               </svg>
@@ -468,9 +484,9 @@
           </a>
           <a class="tab tab-contact" href="mailto:formacion@bde.es">
             <span class="contact-wrap">
-              <span>Contacto</span>
-              <span class="contact-icon" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <span class="contact-text">Contacto</span>
+              <span class="contact-icon" aria-hidden="true" aria-label="Contacto">
+                <svg width="50" height="50" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M13.3334 3.33301H2.66675C1.93341 3.33301 1.33341 3.93301 1.33341 4.66634V11.333C1.33341 12.0663 1.93341 12.6663 2.66675 12.6663H13.3334C14.0667 12.6663 14.6667 12.0663 14.6667 11.333V4.66634C14.6667 3.93301 14.0667 3.33301 13.3334 3.33301ZM13.3334 5.99967L8.00008 9.33301L2.66675 5.99967V4.66634L8.00008 7.99967L13.3334 4.66634V5.99967Z" fill="currentColor"></path>
                 </svg>
               </span>
