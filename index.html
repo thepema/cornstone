@@ -548,7 +548,7 @@
 
                   <li><a class="no-underline " href="#">Itinerario o evento 2</a></li>
 
-                  <li><a class="no-underline " href="#">Rincón Agilidad</a></li>
+                  <li><a class="no-underline " href="https://confluence.bde.es:8443/spaces/C3607AP2/pages/135760515/%C2%A1Bienvenidos+al+Rinc%C3%B3n+de+Agilidad">Rincón Agilidad</a></li>
 
                   <li><a class="no-underline " href="#">Playlist 1</a></li>
 
@@ -628,7 +628,7 @@
 
               <div class="subtab-panel active" id="especializacion-itinerarios">
                 <ul class="simple-list">
-                  <li><a class="no-underline " href="/ui/lms-learner-search/search?pageNumber=2&amp;subjectIds=536,542,546,548">Supervisión, Regulación y Riesgos Financieros</a></li>
+                  <li><a class="no-underline " href="/ui/lms-learner-search/search?pageNumber=1&amp;subjectIds=536,542,546,548">Supervisión, Regulación y Riesgos Financieros</a></li>
 
                   <li><a class="no-underline " href="/ui/lms-learner-search/search?pageNumber=1&amp;subjectIds=535,537,543">Economía, Mercados y Análisis Cuantitativo</a></li>
 
@@ -761,7 +761,7 @@
               <div class="divider">
 
               <div class="section-title">Oferta formativa</div>
-              <button class="btn-outline" type="button" data-redirect="https://www.google.es">EXPLORAR MÁS CURSOS DISPONIBLES</button>
+              <button class="btn-outline" type="button" data-redirect="/ui/lms-learner-search/search?pageNumber=1">EXPLORAR MÁS CURSOS DISPONIBLES</button>
             </div>
           </div></div></article>
           <!-- Columna derecha -->
@@ -826,7 +826,7 @@
                     <div class="faq-content">Para que cualquier formación, sea presencial o telemática, se refleje en tu expediente, es necesario registrarse previamente en Mi Espacio en el curso correspondiente.</div>
                   </div>
                 </div>
-                <button class="btn-small" type="button" data-redirect="https://www.google.es">VER TODAS LAS FAQ'S</button>
+                <button class="btn-small" type="button" data-redirect="/phnx/driver.aspx?routename=Social/Topic/Posting/FilePostingDetails&amp;Posting=4226&amp;Root=88">VER TODAS LAS FAQ'S</button>
               </div>
             </article>
           </div>
@@ -1008,7 +1008,12 @@
 
           // Si NO existe el mensaje, contamos filas reales
           if (!lblNoItems) {
+            if(panelContentMiddle.querySelector('table').querySelector('tbody').querySelectorAll('tr').length === 11){
+              totalRows = panelContentMiddle.querySelector('table').querySelector('tbody').querySelectorAll('tr').length - 1 + '+';
+            }else{
               totalRows = panelContentMiddle.querySelector('table').querySelector('tbody').querySelectorAll('tr').length - 1;
+            }
+
           }
       }
   }
@@ -1026,6 +1031,20 @@
   });
 
 });
+
+let viewport = document.querySelector('meta[name="viewport"]');
+
+if (!viewport) {
+  viewport = document.createElement('meta');
+  viewport.name = 'viewport';
+  document.head.appendChild(viewport);
+}
+
+viewport.setAttribute(
+  'content',
+  'width=device-width, initial-scale=1'
+);
+
 
     </script>
   </body>
