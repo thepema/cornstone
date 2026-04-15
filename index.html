@@ -148,7 +148,6 @@
         font-weight: bold;
         color: var(--primary);
         font-size: 13px;
-        text-transform: uppercase;
       }
       .card-icon {
         width: 22px;
@@ -361,6 +360,9 @@
       }
       .card-header .chevron {
         margin-left: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         color: var(--primary);
       }
       .subtabs {
@@ -515,6 +517,7 @@
                 </span>
                   AVANZA CON TUS ACADEMIAS
                 <span class="chevron" aria-hidden="true">
+                  <p>ver todo</p>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z" fill="#005C9F"></path>
                   </svg>
@@ -571,6 +574,7 @@
                 </span>
                 AVANZA EN TUS COMPETENCIAS
                 <span class="chevron" aria-hidden="true">
+                  <p>ver todo</p>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z" fill="#005C9F"></path>
                   </svg>
@@ -628,6 +632,7 @@
                 </span>
                 AVANZA EN TUS PRIMEROS PASOS
                 <span class="chevron" aria-hidden="true">
+                  <p>ver todo</p>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z" fill="#005C9F"></path>
                   </svg>
@@ -637,9 +642,9 @@
 
             <div class="card-body">
               <ul class="simple-list">
-                <li><a class="no-underline " href="/phnx/driver.aspx?routename=Social/Communities">Acceso Comunidades promoción vertical</a></li>
+                <li><a class="no-underline " href="/phnx/driver.aspx?routename=Social/Communities">Comunidades promoción vertical</a></li>
 
-                <li><a class="no-underline " href="#">Itinerario Onboarding Comunidad IT</a></li>
+                <li><a class="no-underline " href="#">Itinerario Onboarding</a></li>
               </ul>
             </div>
           </article>
@@ -654,6 +659,7 @@
                 </span>
                 AVANZA EN TU CONOCIMIENTO Y ESPECIALIZACIÓN
                 <span class="chevron" aria-hidden="true">
+                  <p>ver todo</p>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z" fill="#005C9F"></path>
                   </svg>
@@ -712,6 +718,7 @@
                 </span>
                 AVANZA SIN FRONTERAS
                 <span class="chevron" aria-hidden="true">
+                  <p>ver todo</p>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z" fill="#005C9F"></path>
                   </svg>
@@ -823,7 +830,7 @@
               <div class="card-body">
                 <div class="progress-item">
                   <a class="no-underline " href="/phnx/driver.aspx?routename=Social/UniversalProfile/Transcript&amp;preSelectedCategoryId=5">
-                  <span>Formación asignada u obligatoria</span> <span id="totalWidget37" class="badge"></span>
+                  <span>Formación asignada</span> <span id="totalWidget37" class="badge"></span>
                   </a>
                 </div>
 
@@ -989,10 +996,11 @@
     function calcularTotales() {
     const ids = [
       'requiredCount',
-      'pastdueCount',
-      'duesoonCount',
-      'assignedCount'
-    ];
+      ];
+
+      // 'pastdueCount',
+      // 'duesoonCount',
+      // 'assignedCount'
 
     let total = 0;
 
