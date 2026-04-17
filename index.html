@@ -1,0 +1,1093 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Cornstone - Mi formación</title>
+
+    <style>
+      [widgetid='3'] {
+        display: none !important;
+      }
+      [widgetid='37'] {
+        display: none !important;
+      }
+      :root {
+        --bg: #f7f7f7;
+        --card: #ffffff;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --primary: #005c9f;
+        --primary-2: #2c6ea3;
+        --border: #d6dde5;
+        --soft: #e6eeff;
+        --accent: #f6c94a;
+        --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        --radius: 8px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+      .topbar {
+        background: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .tabs {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        padding: 6px 6px 0;
+        border-bottom: 2px solid #e5e7eb;
+        justify-content: space-between;
+      }
+      .tab {
+        cursor: pointer;
+        padding: 10px 8px 12px;
+        font-size: 16px;
+        color: #616161;
+        text-decoration: none;
+        position: relative;
+        font-weight: 400;
+      }
+      .tab-contact {
+        color: var(--primary);
+        text-decoration: underline;
+        font-weight: 600;
+      }
+      .tab-contact .contact-wrap {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .tab-contact .contact-icon {
+        display: none;
+        align-items: center;
+        color: var(--primary);
+      }
+      .tab-contact .contact-icon svg {
+        width: 12px;
+        height: 12px;
+      }
+      .external-icon {
+        display: inline-flex;
+        align-items: center;
+        margin-left: 6px;
+        color: #6b7280;
+      }
+      .external-icon svg {
+        width: 12px;
+        height: 12px;
+      }
+      .tab.active {
+        color: #111827;
+        font-weight: bold;
+      }
+      .tab.active::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        height: 3px;
+        background: var(--primary);
+      }
+      .alert {
+        cursor: pointer;
+        background: #f8bb00;
+        color: #000000;
+        padding: 4px 16px 4px 16px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        letter-spacing: 0.2px;
+        margin-right: 10px;   
+       }
+       .alert a {
+        color: #000000;
+       }
+      .topbar .alert svg {
+        width: 12px;
+        height: 12px;
+        color: #111827;
+      }
+      .container {
+        margin: 18px auto 40px;
+        padding: 0 16px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 14px;
+      }
+      .card-header {
+        background: var(--soft);
+        border-radius: 6px;
+        padding: 8px 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: bold;
+        color: var(--primary);
+        font-size: 13px;
+        min-height: 38px;
+      }
+      .card-icon {
+        width: 22px;
+        height: 22px;
+        border-radius: 4px;
+        color: var(--primary);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+      }
+      .card-icon svg {
+        width: 21px;
+        height: 21px;
+      }
+      .card-body {
+        padding: 10px 6px 6px;
+      }
+      .section-title {
+        font-size: 16px;
+        font-weight: 700;
+        margin: 10px 0 8px;
+      }
+      .link-list {
+        margin: 0;
+        padding: 0 0 4px 0;
+        list-style: none;
+        display: grid;
+        gap: 6px;
+      }
+      .link-c {
+        text-decoration: underline;
+		text-decoration-color: var(--primary);
+        margin: 12px 0px 12px 0px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .link-c a {
+        color: var(--primary);
+      }
+      .link-list a {
+        color: var(--primary);
+        text-decoration: underline;
+        font-size: 14px;
+      }
+      .link-with-icon {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .link-with-icon .link-icon {
+        width: 12px;
+        height: 12px;
+        color: var(--primary-2);
+        flex: 0 0 auto;
+      }
+      .divider {
+        border-top: 0.5px solid var(--primary);
+        margin: 10px 0;
+      }
+      .btn-outline {
+        border: 1px solid var(--primary);
+        background: #fff;
+        color: var(--primary);
+        font-size: 12px;
+        padding: 6px 10px;
+        border-radius: 2px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .badge {
+        background: #e6eef6;
+        color: #1f4d74;
+        width: 20px;
+        height: 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 11px;
+        font-weight: 700;
+      }
+      .progress-item a{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #e6eeff80;
+        padding: 10px 12px;
+        border-radius: 6px;
+        margin-bottom: 8px;
+        font-size: 13px;
+        color: #161616;
+        font-weight: bold;
+      }
+      .faq-accordion {
+        margin: 8px 0 0;
+        display: grid;
+        gap: 10px;
+      }
+      .faq-item {
+        border-radius: 6px;
+        background: #fff;
+        overflow: hidden;
+      }
+      .faq-trigger {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        background: none;
+        border: none;
+        padding: 10px 12px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #0A0A0A;
+        text-align: left;
+        cursor: pointer;
+      }
+      .faq-chevron {
+        display: inline-flex;
+        align-items: center;
+        color: var(--primary);
+        transition: transform 0.2s ease;
+      }
+      .faq-chevron svg {
+        width: 18px;
+        height: 18px;
+      }
+      .faq-content {
+        display: none;
+        padding: 0 12px 12px;
+        font-size: 14px;
+        color: #616161;
+        line-height: 1.4;
+      }
+      .faq-item.active .faq-content {
+        display: block;
+      }
+      .faq-item.active .faq-chevron {
+        transform: rotate(90deg);
+      }
+      .img {
+        position: relative;
+      }
+      .img img {
+        position: absolute;
+        top: -7px;
+        right: -20px;
+        z-index: 0;
+      }
+      .z-index {
+        position: relative;
+        z-index: 1;
+      }
+      .btn-small {
+        margin-top: 10px;
+        font-size: 11px;
+        padding: 6px 10px;
+        border-radius: 2px;
+        border: 1px solid var(--primary);
+        background: #fff;
+        color: var(--primary);
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .section-wide {
+        margin-top: 16px;
+      }
+      .split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding-top: 8px;
+      }
+      .split .col {
+        border-right: 1px solid #787777;
+        padding-right: 12px;
+        padding-top: 12px;
+      }
+      .split .col:last-child {
+        border-right: none;
+        padding-right: 0;
+      }
+      .subtitle {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--primary);
+        text-transform: uppercase;
+        margin-bottom: 6px;
+        background-color: #e6eeff;
+        padding: 4px 11px 4px 12px;
+        border-radius: 16px;
+        width: fit-content;
+      }
+      .view {
+        display: none;
+      }
+      .view.active {
+        display: block;
+      }
+      .explore-grid {
+        display: grid;
+        gap: 16px;
+      }
+      .explore-grid.two-col {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .explore-grid.three-col {
+        grid-template-columns: minmax(0, 0.7fr) repeat(2, minmax(0, 1fr));
+      }
+      .card-header .chevron {
+        margin-left: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: var(--primary);
+      }
+      .subtabs {
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+        border-bottom: 1px solid var(--border);
+        margin: 10px 0 8px;
+      }
+      .subtab {
+        flex: 1 1 0;
+        width: 100%;
+        text-align: center;
+        background: none;
+        border: none;
+        padding: 4px 16px 4px 16px;
+        font-size: 16px;
+        font-weight: 400;
+        color: #616161;
+        cursor: pointer;
+      }
+      .subtab.active {
+        color: #161616;
+        font-weight: bold;
+        border-bottom: 3px solid var(--primary);
+        margin-bottom: -1px;
+      }
+      .subtab-panel {
+        display: none;
+        padding: 6px 2px 4px;
+      }
+      .subtab-panel.active {
+        display: block;
+      }
+      .simple-list {
+        margin: 0;
+        padding: 0;
+        padding-top: 16px;
+        list-style: none;
+        display: grid;
+        gap: 10px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .simple-list li {
+        padding-bottom: 15px;
+        border-bottom: 1px solid #dadada;
+        color: #616161 !important;
+      }
+      .simple-list li > a{
+        color: #616161 !important;
+      }
+      .simple-list li:last-child {
+        border-bottom: none;
+      }
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .split {
+          grid-template-columns: 1fr;
+        }
+        .explore-grid.two-col,
+        .explore-grid.three-col {
+          grid-template-columns: 1fr;
+        }
+        .split .col {
+          border-right: none;
+          padding-right: 0;
+          border-bottom: 1px solid var(--border);
+          padding-bottom: 10px;
+        }
+        .split .col:last-child {
+          border-bottom: none;
+        }
+        .topbar .alert {
+          display: none;
+        }
+      }
+      @media (max-width: 499px) {
+        .tab-contact .contact-icon {
+          display: inline-flex;
+        }
+        .tab-contact .contact-text{
+          display: none;
+        }
+        .calendar-text{
+          display: none;
+        }
+      }
+	@media (max-width: 399px) {
+	.tab{
+	 padding: 10px 4px 12px;
+	}
+	.card{
+	  padding: 0px;
+	}
+}
+      .no-underline{
+        text-decoration: none;
+      }
+      
+
+    </style>
+  </head>
+
+  <body>
+    <div class="topbar">
+      <nav class="tabs">
+        <div class="tab">
+
+          <a class="tab active" data-view="explora">Explora</a>
+          <a class="tab" data-view="formacion">Mi formación</a>
+          <a class="tab" href="/LMS/catalog/EventsCalendar.aspx">
+            <span class="calendar-text">Calendario</span>
+            <span class="external-icon" aria-hidden="true" aria-label="Calendario">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 12.6667H3.33333V3.33333H8V2H3.33333C2.59333 2 2 2.6 2 3.33333V12.6667C2 13.4 2.59333 14 3.33333 14H12.6667C13.4 14 14 13.4 14 12.6667V8H12.6667V12.6667ZM9.33333 2V3.33333H11.7267L5.17333 9.88667L6.11333 10.8267L12.6667 4.27333V6.66667H14V2H9.33333Z" fill="#005C9F"></path>
+              </svg>
+            </span>
+          </a>
+          <a class="tab tab-contact" href="mailto:formacion@bde.es">
+            <span class="contact-wrap">
+              <span class="contact-text">Contacto</span>
+              <span class="contact-icon" aria-hidden="true" aria-label="Contacto">
+                <svg width="50" height="50" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.3334 3.33301H2.66675C1.93341 3.33301 1.33341 3.93301 1.33341 4.66634V11.333C1.33341 12.0663 1.93341 12.6663 2.66675 12.6663H13.3334C14.0667 12.6663 14.6667 12.0663 14.6667 11.333V4.66634C14.6667 3.93301 14.0667 3.33301 13.3334 3.33301ZM13.3334 5.99967L8.00008 9.33301L2.66675 5.99967V4.66634L8.00008 7.99967L13.3334 4.66634V5.99967Z" fill="currentColor"></path>
+                </svg>
+              </span>
+            </span>
+          </a> 
+        </div>
+        <div>
+          <span class="alert"> <a class="no-underline" href="/ui/lms-learner-search/search?pageNumber=1&amp;query=MIE_Novedades">¡Explora las novedades!</a></span>
+        </div>
+
+      </nav>
+    </div>
+
+    <main class="container">
+      <section id="view-explora" class="view active">
+        <div class="explore-grid two-col">
+          <article class="card">
+            <a class="no-underline" href="/ui/lms-learner-search/search?pageNumber=1&amp;subjectIds=576,583">
+              <div class="card-header">
+                <span class="card-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.9988 8.571C12.2088 8.571 11.5688 9.211 11.5688 10.001C11.5688 10.791 12.2088 11.431 12.9988 11.431C13.7888 11.431 14.4288 10.791 14.4288 10.001C14.4288 9.211 13.7888 8.571 12.9988 8.571Z" fill="#005C9F"></path>
+
+                    <path d="M13.2088 3.001C9.36885 2.891 6.20885 5.871 6.01885 9.641L4.09885 12.201C3.84885 12.531 4.08885 13.001 4.49885 13.001H5.99885V16.001C5.99885 17.101 6.89885 18.001 7.99885 18.001H8.99885V20.001C8.99885 20.551 9.44885 21.001 9.99885 21.001H14.9988C15.5488 21.001 15.9988 20.551 15.9988 20.001V16.321C18.4388 15.161 20.0988 12.641 19.9988 9.741C19.8588 6.121 16.8188 3.111 13.2088 3.001ZM15.9988 10.001C15.9988 10.131 15.9888 10.261 15.9788 10.391L16.8088 11.051C16.8888 11.111 16.9088 11.211 16.8588 11.301L16.0588 12.691C16.0088 12.781 15.8988 12.811 15.8188 12.781L14.8288 12.381C14.6188 12.541 14.3988 12.671 14.1588 12.771L13.9988 13.831C13.9888 13.931 13.8988 14.001 13.7988 14.001H12.1988C12.0988 14.001 12.0188 13.931 11.9988 13.831L11.8488 12.771C11.5988 12.671 11.3788 12.541 11.1688 12.381L10.1788 12.781C10.0888 12.811 9.97885 12.781 9.92885 12.691L9.12885 11.301C9.07885 11.221 9.09885 11.111 9.17885 11.051L10.0188 10.391C10.0088 10.261 9.99885 10.131 9.99885 10.001C9.99885 9.871 10.0188 9.731 10.0388 9.611L9.18885 8.951C9.10885 8.891 9.08885 8.791 9.13885 8.691L9.93885 7.311C9.98885 7.221 10.0888 7.191 10.1788 7.221L11.1788 7.621C11.3788 7.471 11.6088 7.331 11.8488 7.231L11.9988 6.171C12.0188 6.071 12.0988 6.001 12.1988 6.001H13.7988C13.8988 6.001 13.9788 6.071 13.9988 6.171L14.1488 7.231C14.3888 7.331 14.6088 7.461 14.8188 7.621L15.8188 7.221C15.9088 7.191 16.0188 7.221 16.0588 7.311L16.8588 8.691C16.9088 8.781 16.8888 8.891 16.8088 8.951L15.9588 9.611C15.9888 9.731 15.9988 9.861 15.9988 10.001Z" fill="#005C9F"></path>
+                  </svg>
+                </span>
+                  AVANZA CON TUS ACADEMIAS
+                <span class="chevron" aria-hidden="true">
+                  <p>ver todo</p>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z" fill="#005C9F"></path>
+                  </svg>
+                </span>
+              </div>
+            </a>
+
+            <div class="card-body">
+              <div class="subtabs" role="tablist">
+                <button class="subtab active" data-target="academia-ia" type="button">Academia IA</button>
+                <button class="subtab" data-target="academia-datos" type="button">Academia Datos</button>
+              </div>
+
+              <div class="subtab-panel img active" id="academia-ia">
+                <ul class="simple-list z-index">
+                  
+                  <li><a class="no-underline " href="/phnx/driver.aspx?routename=Social/Communities/CohortCommunityWithFeed&amp;Root=78">Itinerario IA</a></li>
+
+                  <li><a class="no-underline " href="https://bdenred.bde.es/PE2030/es/portal-ia/">Portal IA</a></li>
+
+                  <li><a class="no-underline " href="/ui/lms-learner-playlist/PlaylistDetails?playlistId=8a6e5090-0363-4718-9214-aeaefc5355b8">Playlist Masterclass</a></li>
+
+                  <li><a class="no-underline " href="/ui/lms-learner-playlist/PlaylistDetails?playlistId=04102277-c094-4a91-9a52-5a41418103eb">Playlist TechTalks</a></li>
+
+                  <li><a class="no-underline " href="/ui/lms-learner-playlist/PlaylistDetails?playlistId=7a93a0ec-8293-462e-aaa9-19d5a32c40b0">Playlist Fundamentos programación</a></li>
+                </ul>
+                <img src="/clientimg/bde/welcome/miespacio1/Luzia.png" alt="Fondo con ilustración de un robot con gafas y una laptop, representando la inteligencia artificial">
+              </div>
+
+              <div class="subtab-panel img" id="academia-datos">
+                <ul class="simple-list z-index">
+                  <li><a class="no-underline " href="/phnx/driver.aspx?routename=Social/Communities/CohortCommunityWithFeed&amp;Root=79">Itinerario Datos</a></li>
+
+                  <li><a class="no-underline " href="https://bdenred.bde.es/PE2030/es/portal-del-dato/">Portal del Dato</a></li>
+
+                  <li><a class="no-underline " href="/ui/lms-learner-playlist/PlaylistDetails?playlistId=ca477fdc-2f68-4f99-9146-9923dd6376b5">Playlist Excel y Datos</a></li>
+
+                  <li><a class="no-underline " href="/ui/lms-learner-playlist/PlaylistDetails?playlistId=53662e99-1914-45ed-819a-174e955d67fa">Playlist Power BI desde cero</a></li>
+
+                  <li><a class="no-underline " href="/ui/lms-learner-playlist/PlaylistDetails?playlistId=3dae7752-0176-4eca-8417-36c199ad95d1">Playlist Fundamentos SQL</a></li>
+                </ul>
+                <img src="/clientimg/bde/welcome/miespacio1/Leo.png" alt="Fondo con ilustración representando el análisis de datos">
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <a class="no-underline " href="/ui/lms-learner-search/search?pageNumber=1&amp;subjectIds=587">
+              <div class="card-header">
+                <span class="card-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.92 12.4434L12 11.6234L13.07 12.4334C13.46 12.7234 13.99 12.3534 13.85 11.8834L13.43 10.5234L14.63 9.57336C15 9.29336 14.79 8.69336 14.31 8.69336H12.91L12.48 7.35336C12.33 6.89336 11.68 6.89336 11.53 7.35336L11.09 8.69336H9.68C9.21 8.69336 9 9.29336 9.37 9.58336L10.56 10.5334L10.14 11.8934C10 12.3634 10.53 12.7334 10.92 12.4434ZM6 21.3034C6 21.9834 6.67 22.4634 7.32 22.2534L12 20.6934L16.68 22.2534C17.33 22.4734 18 21.9934 18 21.3034V14.9734C19.24 13.5634 20 11.7234 20 9.69336C20 5.27336 16.42 1.69336 12 1.69336C7.58 1.69336 4 5.27336 4 9.69336C4 11.7234 4.76 13.5634 6 14.9734V21.3034ZM12 3.69336C15.31 3.69336 18 6.38336 18 9.69336C18 13.0034 15.31 15.6934 12 15.6934C8.69 15.6934 6 13.0034 6 9.69336C6 6.38336 8.69 3.69336 12 3.69336Z" fill="#005C9F"></path>
+                  </svg>
+                </span>
+                AVANZA EN TUS COMPETENCIAS
+                <span class="chevron" aria-hidden="true">
+                  <p>ver todo</p>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z" fill="#005C9F"></path>
+                  </svg>
+                </span>
+              </div>
+            </a>
+
+            <div class="card-body">
+              <div class="subtabs" role="tablist">
+                <button class="subtab active" data-target="competencias-agilidad" type="button">Agilidad</button>
+                <button class="subtab" data-target="competencias-liderazgo" type="button">
+                  Liderazgo y Competencias
+                </button>
+              </div>
+
+              <div class="subtab-panel active" id="competencias-agilidad">
+                <ul class="simple-list ">
+                  <li><a class="no-underline " href="#">Pendiente</a></li>
+
+                  <li><a class="no-underline " href="#">Pendiente</a></li>
+
+                  <li><a class="no-underline " href="#">Pendiente</a></li>
+
+                  <li><a class="no-underline " href="https://confluence.bde.es:8443/spaces/C3607AP2/pages/135760515/%C2%A1Bienvenidos+al+Rinc%C3%B3n+de+Agilidad">Rincón Agilidad</a></li>
+
+                  <li><a class="no-underline " href="#">Playlist 1</a></li>
+
+                  <li><a class="no-underline " href="#"></a>Playlist 2</li>
+                </ul>
+              </div>
+
+              <div class="subtab-panel" id="competencias-liderazgo">
+                <ul class="simple-list">
+
+                  <li><a class="no-underline " href="#">Playlist 1</a></li>
+
+                  <li><a class="no-underline " href="#">Playlist 2</a></li>
+
+                  <li><a class="no-underline " href="#">Playlist 3</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="explore-grid three-col" style="margin-top: 16px">
+          <article class="card">
+            <a class="no-underline " href="#">
+              <div class="card-header">
+                <span class="card-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.19002 6.34976C7.15002 8.63976 5.75002 11.9298 5.62002 12.2398L3.36002 11.2698C2.71002 10.9898 2.55002 10.1398 3.05002 9.63976L6.06002 6.62976C6.53002 6.15976 7.21002 5.94976 7.87002 6.07976L9.19002 6.34976ZM10.68 16.5098C10.98 16.8098 11.42 16.8898 11.8 16.7098C12.96 16.1698 15.45 14.8998 17.06 13.2898C21.65 8.69976 21.69 4.95976 21.42 3.35976C21.3845 3.16328 21.2898 2.98234 21.1486 2.84116C21.0074 2.69998 20.8265 2.60529 20.63 2.56976C19.03 2.29976 15.29 2.33976 10.7 6.92976C9.09002 8.53976 7.83002 11.0298 7.28002 12.1898C7.10002 12.5698 7.19002 13.0198 7.48002 13.3098L10.68 16.5098ZM17.65 14.8098C15.36 16.8498 12.07 18.2498 11.76 18.3798L12.73 20.6398C13.01 21.2898 13.86 21.4498 14.36 20.9498L17.37 17.9398C17.84 17.4698 18.05 16.7898 17.92 16.1298L17.65 14.8098ZM8.94002 17.4098C9.03699 17.8941 9.01288 18.3948 8.86983 18.8676C8.72678 19.3403 8.46922 19.7705 8.12002 20.1198C7.35002 20.8898 4.96002 21.4598 3.41002 21.7598C2.72002 21.8898 2.11002 21.2798 2.24002 20.5898C2.54002 19.0398 3.10002 16.6498 3.88002 15.8798C4.22932 15.5306 4.65944 15.273 5.13219 15.1299C5.60495 14.9869 6.10571 14.9628 6.59002 15.0598C7.76002 15.2798 8.72002 16.2398 8.94002 17.4098ZM13 8.99976C13 7.89976 13.9 6.99976 15 6.99976C16.1 6.99976 17 7.89976 17 8.99976C17 10.0998 16.1 10.9998 15 10.9998C13.9 10.9998 13 10.0998 13 8.99976Z" fill="#005C9F"></path>
+                  </svg>
+                </span>
+                AVANZA EN TUS PRIMEROS PASOS
+                <span class="chevron" aria-hidden="true">
+                  <p>ver todo</p>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z" fill="#005C9F"></path>
+                  </svg>
+                </span>
+              </div>
+            </a>  
+
+            <div class="card-body">
+              <ul class="simple-list">
+                <li><a class="no-underline " href="/phnx/driver.aspx?routename=Social/Communities">Comunidades promoción vertical</a></li>
+
+                <li><a class="no-underline " href="#">Itinerario Onboarding</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card">
+            <a class="no-underline " href="/ui/lms-learner-search/search?pageNumber=1&amp;subjectIds=586">
+              <div class="card-header">
+                <span class="card-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.5049 3.67773C15.5549 3.67773 13.4549 4.07773 12.0049 5.17773C10.5549 4.07773 8.45488 3.67773 6.50488 3.67773C5.05488 3.67773 3.51488 3.89773 2.22488 4.46773C1.49488 4.79773 1.00488 5.50773 1.00488 6.31773V17.5977C1.00488 18.8977 2.22488 19.8577 3.48488 19.5377C4.46488 19.2877 5.50488 19.1777 6.50488 19.1777C8.06488 19.1777 9.72488 19.4377 11.0649 20.0977C11.6649 20.3977 12.3449 20.3977 12.9349 20.0977C14.2749 19.4277 15.9349 19.1777 17.4949 19.1777C18.4949 19.1777 19.5349 19.2877 20.5149 19.5377C21.7749 19.8677 22.9949 18.9077 22.9949 17.5977V6.31773C22.9949 5.50773 22.5049 4.79773 21.7749 4.46773C20.4949 3.89773 18.9549 3.67773 17.5049 3.67773ZM21.0049 16.4077C21.0049 17.0377 20.4249 17.4977 19.8049 17.3877C19.0549 17.2477 18.2749 17.1877 17.5049 17.1877C15.8049 17.1877 13.3549 17.8377 12.0049 18.6877V7.17773C13.3549 6.32773 15.8049 5.67773 17.5049 5.67773C18.4249 5.67773 19.3349 5.76773 20.2049 5.95773C20.6649 6.05773 21.0049 6.46773 21.0049 6.93773V16.4077Z" fill="#005C9F"></path>
+                  </svg>
+                </span>
+                AVANZA EN TU CONOCIMIENTO Y ESPECIALIZACIÓN
+                <span class="chevron" aria-hidden="true">
+                  <p>ver todo</p>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z" fill="#005C9F"></path>
+                  </svg>
+                </span>
+              </div>
+            </a>
+
+            <div class="card-body">
+              <div class="subtabs" role="tablist">
+                <button class="subtab active" data-target="especializacion-itinerarios" type="button">Itinerarios</button>
+                <button class="subtab" data-target="especializacion-catalogo" type="button">
+                  Catálogo internacional
+                </button>
+                <button class="subtab" data-target="especializacion-playlists" type="button">Playlists</button>
+              </div>
+
+              <div class="subtab-panel active" id="especializacion-itinerarios">
+                <ul class="simple-list">
+                  <li><a class="no-underline " href="/ui/lms-learner-search/search?pageNumber=1&amp;subjectIds=536,542,546,548">Supervisión, Regulación y Riesgos Financieros</a></li>
+
+                  <li><a class="no-underline " href="/ui/lms-learner-search/search?pageNumber=1&amp;subjectIds=535,537,543">Economía, Mercados y Análisis Cuantitativo</a></li>
+
+                  <li><a class="no-underline " href="/ui/lms-learner-search/search?pageNumber=1&amp;subjectIds=551,554,539,572,545,569,556,581,544,549,570">Gestión Organizativa, Personas y Sistemas</a></li>
+
+                  <li><a class="no-underline " href="/ui/lms-learner-search/search?pageNumber=1&amp;subjectIds=552,534,538,540,541,578,547,557,577">Marco Institucional, Normativo y de Sostenibilidad</a></li>
+                </ul>
+              </div>
+
+              <div class="subtab-panel" id="especializacion-catalogo">
+                <ul class="simple-list">
+                  <li><a class="no-underline " href="#">Consulta el catálogo</a></li>
+
+                  <li><a class="no-underline " href="/ui/lms-learner-search/search?pageNumber=1&amp;providerIds=7472fc78-8710-469d-abdd-7c406ab73fdf">Solicita un curso</a></li>
+
+                  <li><a class="no-underline " href="#">Eureka</a></li>
+                </ul>
+              </div>
+
+              <div class="subtab-panel" id="especializacion-playlists">
+                <ul class="simple-list">
+                  <li><a class="no-underline " href="#">Playlist 1</a></li>
+
+                  <li><a class="no-underline " href="#">Playlist 2</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <a class="no-underline " href="/ui/lms-learner-search/search?pageNumber=1&amp;subjectIds=588">
+              <div class="card-header">
+                <span class="card-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z" fill="#005C9F"></path>
+                  </svg>
+                </span>
+                AVANZA SIN FRONTERAS
+                <span class="chevron" aria-hidden="true">
+                  <p>ver todo</p>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z" fill="#005C9F"></path>
+                  </svg>
+                </span>
+              </div>
+            </a>
+
+            <div class="card-body">
+              <div class="subtabs" role="tablist">
+                <button class="subtab active" data-target="fronteras-servicios" type="button">Servicios centrales</button>
+                <button class="subtab" data-target="fronteras-sucursales" type="button">Sucursales</button>
+                <button class="subtab" data-target="fronteras-playlists" type="button">Playlists</button>
+              </div>
+
+              <div class="subtab-panel active" id="fronteras-servicios">
+                <ul class="simple-list">
+                  <li><a class="no-underline " href="#">Reanudación del programa en Septiembre</a></li>
+
+                  <li><a class="no-underline " href="#">Reembolso de ingles en verano</a></li>
+
+                  <li><a class="no-underline " href="/ui/lms-learner-search/search?pageNumber=1&amp;subjectIds=555">Otros Idiomas</a></li>
+                </ul>
+              </div>
+
+              <div class="subtab-panel " id="fronteras-sucursales">
+                <ul class="simple-list">
+                  <li><a class="no-underline " href="#">Reanudación del programa en Septiembre</a></li>
+
+                  <li><a class="no-underline " href="#">Reembolso de programa ingles</a></li>
+                </ul>
+              </div>
+
+              <div class="subtab-panel" id="fronteras-playlists">
+                <ul class="simple-list">
+                  <li><a class="no-underline " href="#">Playlist 1</a></li>
+
+                  <li><a class="no-underline " href="#">Playlist 2</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="view-formacion" class="view">
+        <section class="grid">
+          <!-- Enlaces de interés -->
+          <article class="card">
+            <div class="card-header">
+              <span class="card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 7H14C13.45 7 13 7.45 13 8C13 8.55 13.45 9 14 9H17C18.65 9 20 10.35 20 12C20 13.65 18.65 15 17 15H14C13.45 15 13 15.45 13 16C13 16.55 13.45 17 14 17H17C19.76 17 22 14.76 22 12C22 9.24 19.76 7 17 7ZM8 12C8 12.55 8.45 13 9 13H15C15.55 13 16 12.55 16 12C16 11.45 15.55 11 15 11H9C8.45 11 8 11.45 8 12ZM10 15H7C5.35 15 4 13.65 4 12C4 10.35 5.35 9 7 9H10C10.55 9 11 8.55 11 8C11 7.45 10.55 7 10 7H7C4.24 7 2 9.24 2 12C2 14.76 4.24 17 7 17H10C10.55 17 11 16.55 11 16C11 15.45 10.55 15 10 15Z" fill="#005C9F"></path>
+                </svg>
+              </span>
+              ENLACES DE INTERÉS
+            </div>
+
+            <div class="card-body">
+              <div class="section-title">Formación ad-hoc</div>
+
+              <ul class="link-list">
+                <li>
+                  <a class="link-with-icon" href="/phnx/driver.aspx?routename=Learning/ExternalTraining&amp;TargetUser=self">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12.6667 2.66634H9.88C9.6 1.89301 8.86667 1.33301 8 1.33301C7.13333 1.33301 6.4 1.89301 6.12 2.66634H3.33333C2.6 2.66634 2 3.26634 2 3.99967V13.333C2 14.0663 2.6 14.6663 3.33333 14.6663H12.6667C13.4 14.6663 14 14.0663 14 13.333V3.99967C14 3.26634 13.4 2.66634 12.6667 2.66634ZM8 2.66634C8.36667 2.66634 8.66667 2.96634 8.66667 3.33301C8.66667 3.69967 8.36667 3.99967 8 3.99967C7.63333 3.99967 7.33333 3.69967 7.33333 3.33301C7.33333 2.96634 7.63333 2.66634 8 2.66634ZM8.66667 11.9997H5.33333C4.96667 11.9997 4.66667 11.6997 4.66667 11.333C4.66667 10.9663 4.96667 10.6663 5.33333 10.6663H8.66667C9.03333 10.6663 9.33333 10.9663 9.33333 11.333C9.33333 11.6997 9.03333 11.9997 8.66667 11.9997ZM10.6667 9.33301H5.33333C4.96667 9.33301 4.66667 9.03301 4.66667 8.66634C4.66667 8.29967 4.96667 7.99967 5.33333 7.99967H10.6667C11.0333 7.99967 11.3333 8.29967 11.3333 8.66634C11.3333 9.03301 11.0333 9.33301 10.6667 9.33301ZM10.6667 6.66634H5.33333C4.96667 6.66634 4.66667 6.36634 4.66667 5.99967C4.66667 5.63301 4.96667 5.33301 5.33333 5.33301H10.6667C11.0333 5.33301 11.3333 5.63301 11.3333 5.99967C11.3333 6.36634 11.0333 6.66634 10.6667 6.66634Z" fill="#005C9F"></path>
+                    </svg>
+                    <span>Justifica tu petición</span>
+                  </a>
+                </li>
+              </ul>
+
+              <div class="divider">
+
+              <div class="section-title">Historial formativo</div>
+
+              <ul class="link-list">
+                <li>
+                  <a class="link-with-icon" href="/phnx/driver.aspx?routename=Social/UniversalProfile/Transcript&amp;preSelectedCategoryId=3"> <span>Consulta o certifica tu expediente formativo</span> </a>
+                </li>
+              </ul>
+
+              <div class="divider">
+
+              <div class="section-title">Oferta formativa</div>
+              <button class="btn-outline" type="button" data-redirect="/ui/lms-learner-search/search?pageNumber=1">EXPLORAR MÁS CURSOS DISPONIBLES</button>
+            </div>
+          </div></div></article>
+          <!-- Columna derecha -->
+          <div>
+            <article class="card" style="margin-bottom: 16px">
+              <div class="card-header">
+                <span class="card-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.45364 13.1764V15.9864C4.45364 16.7164 4.85364 17.3964 5.49364 17.7464L10.4936 20.4764C11.0936 20.8064 11.8136 20.8064 12.4136 20.4764L17.4136 17.7464C18.0536 17.3964 18.4536 16.7164 18.4536 15.9864V13.1764L12.4136 16.4764C11.8136 16.8064 11.0936 16.8064 10.4936 16.4764L4.45364 13.1764ZM10.4936 3.51637L2.06364 8.11637C1.37364 8.49637 1.37364 9.49637 2.06364 9.87637L10.4936 14.4764C11.0936 14.8064 11.8136 14.8064 12.4136 14.4764L20.4536 10.0864V15.9964C20.4536 16.5464 20.9036 16.9964 21.4536 16.9964C22.0036 16.9964 22.4536 16.5464 22.4536 15.9964V9.58637C22.4536 9.21637 22.2536 8.88637 21.9336 8.70637L12.4136 3.51637C11.8136 3.19637 11.0936 3.19637 10.4936 3.51637Z" fill="#005C9F"></path>
+                  </svg>
+                </span>
+                MI PROGRESO
+              </div>
+
+              <div class="card-body">
+                <div class="progress-item">
+                  <a class="no-underline " href="/phnx/driver.aspx?routename=Social/UniversalProfile/Transcript&amp;preSelectedCategoryId=5">
+                  <span>Formación asignada</span> <span id="totalWidget37" class="badge"></span>
+                  </a>
+                </div>
+
+                <div class="progress-item"><a class="no-underline " href="/phnx/driver.aspx?routename=Social/UniversalProfile/Transcript&amp;RESET=TRUE"><span>Formación en progreso</span> <span id="totalWidget3" class="badge"></span></a></div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-header">PREGUNTAS FRECUENTES</div>
+
+              <div class="card-body">
+                <div class="faq-accordion">
+                  <div class="faq-item active">
+                    <button class="faq-trigger" type="button">
+                      <span>¿Dónde puedo consultar la oferta de formación disponible?</span>
+                      <span class="faq-chevron" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z" fill="#005C9F"></path>
+                        </svg>
+                      </span>
+                    </button>
+                    <div class="faq-content">En Mi Espacio puedes consultar las fechas de los próximos cursos y marcar tus intereses para recibir notificaciones de nuevas convocatorias.</div>
+                  </div>
+                  <div class="faq-item">
+                    <button class="faq-trigger" type="button">
+                      <span>¿Cómo cancelo la inscripción a una formación?</span>
+                      <span class="faq-chevron" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z" fill="#005C9F"></path>
+                        </svg>
+                      </span>
+                    </button>
+                    <div class="faq-content">Para liberar la plaza y que pueda inscribirse otra persona, debes darte de baja en Mi Espacio, accediendo a tu Expediente &gt; Formación, seleccionando “darme de baja”.</div>
+                  </div>
+                  <div class="faq-item">
+                    <button class="faq-trigger" type="button">
+                      <span>¿Se reflejará en mi expediente mi asistencia a una sesión por Teams?</span>
+                      <span class="faq-chevron" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12.9462 11.9995L8.34619 7.39953L9.40002 6.3457L15.0538 11.9995L9.40002 17.6534L8.34619 16.5995L12.9462 11.9995Z" fill="#005C9F"></path>
+                        </svg>
+                      </span>
+                    </button>
+                    <div class="faq-content">Para que cualquier formación, sea presencial o telemática, se refleje en tu expediente, es necesario registrarse previamente en Mi Espacio en el curso correspondiente.</div>
+                  </div>
+                </div>
+                <button class="btn-small" type="button" data-redirect="/phnx/driver.aspx?routename=Social/Topic/Posting/FilePostingDetails&amp;Posting=4226&amp;Root=88">VER TODAS LAS FAQ'S</button>
+              </div>
+            </article>
+          </div>
+        </section>
+        <!-- Sección inferior -->
+        <section class="card section-wide">
+          <div class="card-header">
+            <span class="card-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.59 4.59C10.21 4.21 9.7 4 9.17 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V8C22 6.9 21.1 6 20 6H12L10.59 4.59Z" fill="#005C9F"></path>
+              </svg>
+            </span>
+            OTROS
+          </div>
+
+          <div class="card-body split">
+            <div class="col">
+              <div class="subtitle">Interlocutores</div>
+
+              <ul class="link-list">
+                <li>
+                  <a class="link-with-icon" href="#">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.72675 1.72634C9.47342 1.47301 9.13341 1.33301 8.78008 1.33301H4.00008C3.26675 1.33301 2.66675 1.93301 2.66675 2.66634V13.333C2.66675 14.0663 3.26008 14.6663 3.99341 14.6663H12.0001C12.7334 14.6663 13.3334 14.0663 13.3334 13.333V5.88634C13.3334 5.53301 13.1934 5.19301 12.9401 4.94634L9.72675 1.72634ZM10.0001 11.9997H6.00008C5.63341 11.9997 5.33341 11.6997 5.33341 11.333C5.33341 10.9663 5.63341 10.6663 6.00008 10.6663H10.0001C10.3667 10.6663 10.6667 10.9663 10.6667 11.333C10.6667 11.6997 10.3667 11.9997 10.0001 11.9997ZM10.0001 9.33301H6.00008C5.63341 9.33301 5.33341 9.03301 5.33341 8.66634C5.33341 8.29967 5.63341 7.99967 6.00008 7.99967H10.0001C10.3667 7.99967 10.6667 8.29967 10.6667 8.66634C10.6667 9.03301 10.3667 9.33301 10.0001 9.33301ZM8.66675 5.33301V2.33301L12.3334 5.99967H9.33341C8.96675 5.99967 8.66675 5.69967 8.66675 5.33301Z" fill="#005C9F"></path>
+                    </svg>
+                    <span>Formaliza aquí tu solicitud de formación</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col">
+              <div class="subtitle">Responsables</div>
+
+              <div class="section-title">Consulta tus informes de formación</div>
+
+              <ul class="link-list">
+                <li>
+                  <a class="link-with-icon" href="/Dashboard/Main.aspx?tab_page_id=-303">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.72675 1.72634C9.47342 1.47301 9.13341 1.33301 8.78008 1.33301H4.00008C3.26675 1.33301 2.66675 1.93301 2.66675 2.66634V13.333C2.66675 14.0663 3.26008 14.6663 3.99341 14.6663H12.0001C12.7334 14.6663 13.3334 14.0663 13.3334 13.333V5.88634C13.3334 5.53301 13.1934 5.19301 12.9401 4.94634L9.72675 1.72634ZM10.0001 11.9997H6.00008C5.63341 11.9997 5.33341 11.6997 5.33341 11.333C5.33341 10.9663 5.63341 10.6663 6.00008 10.6663H10.0001C10.3667 10.6663 10.6667 10.9663 10.6667 11.333C10.6667 11.6997 10.3667 11.9997 10.0001 11.9997ZM10.0001 9.33301H6.00008C5.63341 9.33301 5.33341 9.03301 5.33341 8.66634C5.33341 8.29967 5.63341 7.99967 6.00008 7.99967H10.0001C10.3667 7.99967 10.6667 8.29967 10.6667 8.66634C10.6667 9.03301 10.3667 9.33301 10.0001 9.33301ZM8.66675 5.33301V2.33301L12.3334 5.99967H9.33341C8.96675 5.99967 8.66675 5.69967 8.66675 5.33301Z" fill="#005C9F"></path>
+                    </svg>
+                    <span>Ver informes</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
+      
+
+    </main>
+    <script>
+     const viewTabs = document.querySelectorAll('.tab[data-view]');
+      const views = document.querySelectorAll('.view');
+      const tabParamToView = value => {
+        if (value === '1') return 'explora';
+        if (value === '2') return 'formacion';
+        return 'formacion';
+      };
+      const viewToTabParam = viewId => (viewId === 'explora' ? '1' : '2');
+      const setActiveView = (viewId, updateUrl) => {
+        viewTabs.forEach(t => t.classList.toggle('active', t.dataset.view === viewId));
+        views.forEach(view => {
+          view.classList.toggle('active', view.id === `view-${viewId}`);
+        });
+        if (updateUrl) {
+          const url = new URL(window.location.href);
+          url.searchParams.set('tab', viewToTabParam(viewId));
+          history.replaceState(null, '', url.toString());
+        }
+      };
+      const initialTabParam = new URLSearchParams(window.location.search).get('tab');
+      setActiveView(tabParamToView(initialTabParam || '1'), false);
+      viewTabs.forEach(tab => {
+        tab.addEventListener('click', e => {
+          e.preventDefault();
+          const viewId = tab.dataset.view;
+          setActiveView(viewId, true);
+        });
+      });
+      document.querySelectorAll('.subtabs').forEach(subtabGroup => {
+        const tabs = subtabGroup.querySelectorAll('.subtab');
+        tabs.forEach(button => {
+          button.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            button.classList.add('active');
+            const parentCard = subtabGroup.closest('.card');
+            parentCard.querySelectorAll('.subtab-panel').forEach(panel => {
+              panel.classList.toggle('active', panel.id === button.dataset.target);
+            });
+          });
+        });
+      });
+      document.querySelectorAll('.faq-accordion').forEach(accordion => {
+        const items = accordion.querySelectorAll('.faq-item');
+        if (items.length) {
+          items.forEach(item => item.classList.remove('active'));
+          items[0].classList.add('active');
+        }
+        items.forEach(item => {
+          const button = item.querySelector('.faq-trigger');
+          button.addEventListener('click', () => {
+            items.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+          });
+        });
+      });
+
+      
+    var total = 0;
+
+    function calcularTotales() {
+    const ids = [
+      'requiredCount',
+      ];
+
+      // 'pastdueCount',
+      // 'duesoonCount',
+      // 'assignedCount'
+
+    let total = 0;
+
+    ids.forEach(id => {
+      const th = document.getElementById(id);
+      if (!th) return;
+
+      const link = th.querySelector('a');
+      if (!link) return;
+
+      const value = parseInt(link.textContent.trim(), 10);
+      if (!isNaN(value)) {
+        total += value;
+      }
+    });
+
+    // Sustituir el contenido del apartado total
+    const totalWidget = document.getElementById('totalWidget37');
+    if (totalWidget) {
+      totalWidget.textContent = total;
+    }
+  }
+  const widget37 = document.querySelector('[widgetid="37"]');
+
+  if(widget37) {
+    const observer = new MutationObserver(() => {
+
+        calcularTotales();
+      });
+
+      observer.observe(widget37, {
+        childList: true,
+        subtree: true,
+        characterData: true
+      });
+
+  }
+ 
+  calcularTotales();
+
+    
+  document.addEventListener('DOMContentLoaded', function () {
+    
+  
+  var widget = document.querySelector('.widgetDropped[widgetid="3"]');
+  let totalRows = 0;
+
+  const totalWidget3 = document.getElementById('totalWidget3');
+
+  if (widget) {
+    var panelContentMiddle = widget.querySelector('.Panel_contentMiddle');
+
+      if (panelContentMiddle) {
+
+          // Comprobar si existe el mensaje de lista vacía
+          var lblNoItems = panelContentMiddle.querySelector("span[id$='lblNoItems']");
+
+          // Si NO existe el mensaje, contamos filas reales
+          if (!lblNoItems) {
+            if(panelContentMiddle.querySelector('table').querySelector('tbody').querySelectorAll('tr').length === 11){
+              totalRows = panelContentMiddle.querySelector('table').querySelector('tbody').querySelectorAll('tr').length - 1 + '+';
+            }else{
+              totalRows = panelContentMiddle.querySelector('table').querySelector('tbody').querySelectorAll('tr').length - 1;
+            }
+
+          }
+      }
+  }
+
+  if (totalWidget3) {
+      totalWidget3.textContent = totalRows;
+  }
+
+  document.querySelectorAll('[data-redirect]').forEach(button => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      window.location.href = button.dataset.redirect;
+    });
+  });
+
+});
+
+let viewport = document.querySelector('meta[name="viewport"]');
+
+if (!viewport) {
+  viewport = document.createElement('meta');
+  viewport.name = 'viewport';
+  document.head.appendChild(viewport);
+}
+
+viewport.setAttribute(
+  'content',
+  'width=device-width, initial-scale=1'
+);
+
+
+    </script>
+  </body>
+</html>
